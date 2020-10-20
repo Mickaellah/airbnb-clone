@@ -2,7 +2,7 @@
 
 Challenge: Create a small version of Airbnb - Windbnb with given data, and use React to handle the frontend. Don’t look at the existing solution. Fulfill user stories below:
 
-![image](./windbnb.png)
+![image](./img/windbnb.png)
 
 -   User story: I can see a list of properties
 -   User story: I can see property card with a name, rating, apartment type, and super host

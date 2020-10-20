@@ -28453,7 +28453,9 @@ function Hotel(_ref) {
     alt: title
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, superHost ? /*#__PURE__*/_react.default.createElement("button", null, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds)), /*#__PURE__*/_react.default.createElement("p", null, "\u2728  ", rating)), /*#__PURE__*/_react.default.createElement("p", null, title));
+  }, superHost ? /*#__PURE__*/_react.default.createElement("button", {
+    className: "host"
+  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds)), /*#__PURE__*/_react.default.createElement("p", null, "\u2728  ", rating)), /*#__PURE__*/_react.default.createElement("p", null, title));
 }
 },{"react":"node_modules/react/index.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
@@ -28492,19 +28494,63 @@ function HotelComponents() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Form;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Form(props) {
-  return /*#__PURE__*/_react.default.createElement("input", {
+  var handleChange = function handleChange(e) {
+    console.log("Select an element");
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("select", {
+    className: "location",
+    onChange: handleChange
+  }, /*#__PURE__*/_react.default.createElement("option", null, "Choose a location"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "helsinki"
+  }, "Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "turku"
+  }, "Turku"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "vaasa"
+  }, "Vaasa"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "oulu"
+  }, "Oulu")), /*#__PURE__*/_react.default.createElement("input", {
     type: props.type,
     name: props.name,
     id: props.id,
     placeholder: props.placeholder
-  });
+  }));
+}
+
+var container = document.createElement('div');
+document.body.appendChild(container);
+var _default = Form;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"Components/Button.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Button;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Button(props) {
+  var Class;
+
+  if (props.icon === 'endIcon') {
+    Class = "bttn--endIcon";
+  }
+
+  return /*#__PURE__*/_react.default.createElement("button", {
+    type: props.type,
+    className: props.className
+  }, "Search");
 }
 },{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
@@ -28512,7 +28558,7 @@ function Form(props) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = App;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -28520,24 +28566,28 @@ var _HotelComponents = _interopRequireDefault(require("../Components/HotelCompon
 
 var _Form = _interopRequireDefault(require("../Components/Form"));
 
+var _Button = _interopRequireDefault(require("../Components/Button"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
-    class: "form"
+    className: "form"
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    type: "text",
-    placeholder: "Helsinki, Finland",
-    name: "location",
-    id: "location"
-  }), /*#__PURE__*/_react.default.createElement(_Form.default, {
     type: "text",
     placeholder: "Add guests",
     name: "guests",
     id: "guests"
+  }), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    type: "button",
+    icon: "endIcon",
+    className: "endIcon"
   })), /*#__PURE__*/_react.default.createElement(_HotelComponents.default, null));
 }
-},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js","../Components/Form":"Components/Form.js"}],"script.js":[function(require,module,exports) {
+
+var _default = App;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js","../Components/Form":"Components/Form.js","../Components/Button":"Components/Button.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28577,7 +28627,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64724" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53526" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
