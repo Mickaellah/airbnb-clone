@@ -28486,7 +28486,27 @@ function HotelComponents() {
     }, stay));
   }));
 }
-},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js"}],"Components/Form.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Form;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Form(props) {
+  return /*#__PURE__*/_react.default.createElement("input", {
+    type: props.type,
+    name: props.name,
+    id: props.id,
+    placeholder: props.placeholder
+  });
+}
+},{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28498,13 +28518,26 @@ var _react = _interopRequireDefault(require("react"));
 
 var _HotelComponents = _interopRequireDefault(require("../Components/HotelComponents"));
 
+var _Form = _interopRequireDefault(require("../Components/Form"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import '../styles.css'
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_HotelComponents.default, null);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
+    class: "form"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
+    type: "text",
+    placeholder: "Helsinki, Finland",
+    name: "location",
+    id: "location"
+  }), /*#__PURE__*/_react.default.createElement(_Form.default, {
+    type: "text",
+    placeholder: "Add guests",
+    name: "guests",
+    id: "guests"
+  })), /*#__PURE__*/_react.default.createElement(_HotelComponents.default, null));
 }
-},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js"}],"script.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js","../Components/Form":"Components/Form.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

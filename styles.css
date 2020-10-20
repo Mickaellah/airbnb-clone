@@ -1,10 +1,16 @@
+body {
+    max-width: 1000px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
 .heading {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.category {
-    color: rgba(235, 87, 87, 1);
+.logo {
+    margin-inline-start: -45%;
 }
 
 .card-list {
@@ -33,3 +39,41 @@ button {
     background-color: white;
     margin-top: 8px;
 }
+
+.form {
+    position: absolute;
+    top: 0;
+    left: 62%;
+    display: flex;
+    margin-block-start: 16px;
+}
+
+#location,
+#guests {
+    padding-block: 16px;
+    padding-inline: 16px;
+    border: none;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#location {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+#guests {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* .input--endIcon {
+    background-image: url('./img/searc-icon.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    padding-block: 16px;
+    padding-inline: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    /* margin-inline-start: 16px; */
