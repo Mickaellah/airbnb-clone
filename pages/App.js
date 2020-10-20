@@ -7,15 +7,15 @@ function App() {
 
     return (
         <>
-            <form className="form">
+            <form className="form" onSubmit={(e) => {e.preventDefault(); console.log(e.target.value)}}>
                 <Form 
-                    type="text"
+                    type="number"
                     placeholder="Add guests"
                     name="guests"
                     id="guests"
                 />
                 <Button 
-                    type="button"
+                    type="submit"
                     icon="endIcon"
                     className="endIcon"
                 />

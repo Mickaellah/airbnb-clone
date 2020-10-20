@@ -7,8 +7,8 @@ export default function HotelComponents() {
     return (
         <div className="card-list">
             {
-                Stays.map(stay => (
-                    <Hotel key={stay.id} {...stay}/>
+            Stays.map(stay => (
+                    <Hotel key={stay.title} {...stay} />
                 ))
             }
         </div>

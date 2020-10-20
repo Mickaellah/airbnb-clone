@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Mickaellah/airbnb-clone#readme",
   "dependencies": {
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-uid": "^2.3.0"
   }
 }
