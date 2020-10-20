@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"script.75da7f30.css","sourceRoot":"..","sourcesContent":[".card-list {\r\n    display: grid;\r\n    grid-template-columns: repeat(3, 1fr);\r\n    grid-column-gap: 32px;\r\n    column-gap: 32px;\r\n}"]}

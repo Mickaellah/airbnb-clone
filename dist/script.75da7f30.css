@@ -1,0 +1,8 @@
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 32px;
+    column-gap: 32px;
+}
+
+/*# sourceMappingURL=/script.75da7f30.css.map */
