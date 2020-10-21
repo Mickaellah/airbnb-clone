@@ -1,36 +1,20 @@
-import React, { useState } from "react";
-import Stays from "../stays.json";
+import React from "react";
 
 function Form(props) {
-    const [ location, setLocation ] = useState('');
 
-    const handleChange = (e) => {
-        console.log("Select an element");
-        e.preventDefault();
-        setLocation(e.target.value);
-        const filteredCityV = Stays.filter(stay => stay.city.includes('V'));
-        console.log(filteredCityV);
-        const filteredCityO = Stays.filter(stay => stay.city.includes('O'));
-        console.log(filteredCityO);
-        const filteredCityT = Stays.filter(stay => stay.city.includes('T'));
-        console.log(filteredCityT);
-    }
     return (
         <>
-            <select className="location" value={location} onChange={handleChange}>
+            <select className="location" value={props.value} onChange={props.onChange}>
                 <option>Choose a location</option>
-                <option value="helsinki">Helsinki</option>
-                <option value="turku">Turku</option>
-                <option value="vaasa">Vaasa</option>
-                <option value="oulu">Oulu</option>
+                <option value="Helsinki">Helsinki</option>
+                <option value="Turku">Turku</option>
+                <option value="Vaasa">Vaasa</option>
+                <option value="Oulu">Oulu</option>
             </select>
             <input type={props.type} name={props.name} id={props.id} placeholder={props.placeholder}/>
         </>
     )
 }
-
-const container = document.createElement('div');
-document.body.appendChild(container);
 
 export default Form
 
