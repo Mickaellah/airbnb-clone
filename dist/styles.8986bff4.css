@@ -9,6 +9,15 @@ body {
     flex-direction: column-reverse;
 }
 
+.heading_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading_container > span {
+    margin-block-start: 32px;
+}
+
 .logo {
     margin-inline-start: -45%;
 }

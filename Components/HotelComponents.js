@@ -6,11 +6,20 @@ import Form from "../Components/Form";
 
 export default function HotelComponents() {
     const [ location, setLocation ] = useState('');
+    const [ guest, setGuest ] = useState('');
     const [data, setData ] = useState([]);
 
     function searchData(e) {
         e.preventDefault();
         setData(Stays);
+    }
+
+    function filterNumberOfGuest(e) {
+        setGuest(e.target.value);
+        const filteredGuest = Stays.filter(guest => {
+            return guest.maxGuests.toString() === e.target.value;
+        })
+        setData(filteredGuest);
     }
 
     const filteredCity = data.filter(stay => stay.city == location);
@@ -24,6 +33,7 @@ export default function HotelComponents() {
     })
 
     const showData = (location == "") ? mapData : filteredStays;
+
     return (
         <>
             <form className="form" onSubmit={searchData}>
@@ -34,6 +44,8 @@ export default function HotelComponents() {
                     name="guests"
                     id="guests"
                     value={location}
+                    guests={guest}
+                    onClick={(e) => setGuest(e.target.value)}
                 />
                 <button type="submit" className="endIcon">Search</button>
             </form>

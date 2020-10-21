@@ -1,7 +1,6 @@
 import React from "react";
 
 function Form(props) {
-
     return (
         <>
             <select className="location" value={props.value} onChange={props.onChange}>
@@ -11,7 +10,7 @@ function Form(props) {
                 <option value="Vaasa">Vaasa</option>
                 <option value="Oulu">Oulu</option>
             </select>
-            <input type={props.type} name={props.name} id={props.id} placeholder={props.placeholder}/>
+            <input type={props.type} name={props.name} onChange={props.onClick} value={props.guests} id={props.id} placeholder={props.placeholder}/>
         </>
     )
 }

@@ -28485,6 +28485,8 @@ function Form(props) {
   }, "Oulu")), /*#__PURE__*/_react.default.createElement("input", {
     type: props.type,
     name: props.name,
+    onChange: props.onClick,
+    value: props.guests,
     id: props.id,
     placeholder: props.placeholder
   }));
@@ -28534,14 +28536,29 @@ function HotelComponents() {
       location = _useState2[0],
       setLocation = _useState2[1];
 
-  var _useState3 = (0, _react.useState)([]),
+  var _useState3 = (0, _react.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      data = _useState4[0],
-      setData = _useState4[1];
+      guest = _useState4[0],
+      setGuest = _useState4[1];
+
+  var _useState5 = (0, _react.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      data = _useState6[0],
+      setData = _useState6[1];
 
   function searchData(e) {
     e.preventDefault();
     setData(_stays.default);
+  }
+
+  function filterNumberOfGuest(e) {
+    setGuest(e.target.value);
+
+    var filteredGuest = _stays.default.filter(function (guest) {
+      return guest.maxGuests.toString() === e.target.value;
+    });
+
+    setData(filteredGuest);
   }
 
   var filteredCity = data.filter(function (stay) {
@@ -28571,7 +28588,11 @@ function HotelComponents() {
     placeholder: "Add guests",
     name: "guests",
     id: "guests",
-    value: location
+    value: location,
+    guests: guest,
+    onClick: function onClick(e) {
+      return setGuest(e.target.value);
+    }
   }), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "endIcon"
