@@ -7,7 +7,7 @@ import Form from "../Components/Form";
 export default function HotelComponents() {
     const [ location, setLocation ] = useState('');
     const [ guest, setGuest ] = useState('');
-    const [data, setData ] = useState([]);
+    const [ data, setData ] = useState([]);
 
     function searchData(e) {
         e.preventDefault();
@@ -20,37 +20,41 @@ export default function HotelComponents() {
             return guest.maxGuests.toString() === e.target.value;
         })
         setData(filteredGuest);
+        console.log(filteredGuest);
     }
 
-    const filteredCity = data.filter(stay => stay.city == location);
+    function filteredLocation(e) {
+        setLocation(e.target.value);
+        const filteredCity = Stays.filter(stay => { return stay.city.toLowerCase() === e.target.value
+        });
+        setData(filteredCity);
+    }
 
-    const mapData = Stays.map(stay => {
-        return <Hotel key={stay.title} {...stay} />
-    })
+    // const mapData = 
 
-    const filteredStays = filteredCity.map(stay => {
-        return <Hotel key={stay.title} {...stay}/>
-    })
-
-    const showData = (location == "") ? mapData : filteredStays;
+    // const filteredStays = 
 
     return (
         <>
             <form className="form" onSubmit={searchData}>
                 <Form 
-                    onChange={(e) => setLocation(e.target.value)}
+                    onChange={filteredLocation}
+                    inputChange={filterNumberOfGuest}
                     type="number"
                     placeholder="Add guests"
                     name="guests"
                     id="guests"
                     value={location}
                     guests={guest}
-                    onClick={(e) => setGuest(e.target.value)}
                 />
                 <button type="submit" className="endIcon">Search</button>
             </form>
             <div className="card-list">
-                {showData}
+                {(location || guest) ? 
+                data.map(stay => {
+                return <Hotel key={stay.title} {...stay}/>}) 
+                : Stays.map(stay => { return <Hotel key={stay.title} {...stay} />
+    })}
             </div>
         </>
     )

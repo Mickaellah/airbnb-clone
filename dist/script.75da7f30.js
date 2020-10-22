@@ -28475,17 +28475,17 @@ function Form(props) {
     value: props.value,
     onChange: props.onChange
   }, /*#__PURE__*/_react.default.createElement("option", null, "Choose a location"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Helsinki"
+    value: "helsinki"
   }, "Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Turku"
+    value: "turku"
   }, "Turku"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Vaasa"
+    value: "vaasa"
   }, "Vaasa"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Oulu"
+    value: "oulu"
   }, "Oulu")), /*#__PURE__*/_react.default.createElement("input", {
     type: props.type,
     name: props.name,
-    onChange: props.onClick,
+    onChange: props.inputChange,
     value: props.guests,
     id: props.id,
     placeholder: props.placeholder
@@ -28559,46 +28559,47 @@ function HotelComponents() {
     });
 
     setData(filteredGuest);
+    console.log(filteredGuest);
   }
 
-  var filteredCity = data.filter(function (stay) {
-    return stay.city == location;
-  });
+  function filteredLocation(e) {
+    setLocation(e.target.value);
 
-  var mapData = _stays.default.map(function (stay) {
-    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
-      key: stay.title
-    }, stay));
-  });
+    var filteredCity = _stays.default.filter(function (stay) {
+      return stay.city.toLowerCase() === e.target.value;
+    });
 
-  var filteredStays = filteredCity.map(function (stay) {
-    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
-      key: stay.title
-    }, stay));
-  });
-  var showData = location == "" ? mapData : filteredStays;
+    setData(filteredCity);
+  } // const mapData = 
+  // const filteredStays = 
+
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
     className: "form",
     onSubmit: searchData
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    onChange: function onChange(e) {
-      return setLocation(e.target.value);
-    },
+    onChange: filteredLocation,
+    inputChange: filterNumberOfGuest,
     type: "number",
     placeholder: "Add guests",
     name: "guests",
     id: "guests",
     value: location,
-    guests: guest,
-    onClick: function onClick(e) {
-      return setGuest(e.target.value);
-    }
+    guests: guest
   }), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "endIcon"
   }, "Search")), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-list"
-  }, showData));
+  }, location || guest ? data.map(function (stay) {
+    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
+      key: stay.title
+    }, stay));
+  }) : _stays.default.map(function (stay) {
+    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
+      key: stay.title
+    }, stay));
+  })));
 }
 },{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
@@ -28660,7 +28661,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62536" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64333" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
