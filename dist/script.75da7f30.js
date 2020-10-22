@@ -28570,9 +28570,19 @@ function HotelComponents() {
     });
 
     setData(filteredCity);
-  } // const mapData = 
-  // const filteredStays = 
+  }
 
+  var mapData = data.map(function (stay) {
+    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
+      key: stay.title
+    }, stay));
+  });
+
+  var filteredStays = _stays.default.map(function (stay) {
+    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
+      key: stay.title
+    }, stay));
+  });
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
     className: "form",
@@ -28591,15 +28601,7 @@ function HotelComponents() {
     className: "endIcon"
   }, "Search")), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-list"
-  }, location || guest ? data.map(function (stay) {
-    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
-      key: stay.title
-    }, stay));
-  }) : _stays.default.map(function (stay) {
-    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
-      key: stay.title
-    }, stay));
-  })));
+  }, location || guest ? mapData : filteredStays));
 }
 },{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";

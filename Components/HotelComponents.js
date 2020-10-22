@@ -30,9 +30,13 @@ export default function HotelComponents() {
         setData(filteredCity);
     }
 
-    // const mapData = 
+    const mapData = data.map(stay => { 
+        return <Hotel key={stay.title} {...stay}/>
+    })
 
-    // const filteredStays = 
+    const filteredStays = Stays.map(stay => { 
+        return <Hotel key={stay.title} {...stay} />
+    });
 
     return (
         <>
@@ -50,11 +54,7 @@ export default function HotelComponents() {
                 <button type="submit" className="endIcon">Search</button>
             </form>
             <div className="card-list">
-                {(location || guest) ? 
-                data.map(stay => {
-                return <Hotel key={stay.title} {...stay}/>}) 
-                : Stays.map(stay => { return <Hotel key={stay.title} {...stay} />
-    })}
+                {(location || guest) ? mapData : filteredStays}
             </div>
         </>
     )
