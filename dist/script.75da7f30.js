@@ -28455,7 +28455,21 @@ function Hotel(_ref) {
     className: "container"
   }, superHost ? /*#__PURE__*/_react.default.createElement("button", {
     className: "host"
-  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds)), /*#__PURE__*/_react.default.createElement("p", null, "\u2728  ", rating)), /*#__PURE__*/_react.default.createElement("p", null, title));
+  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    enableBackground: "new 0 0 24 24",
+    height: "24",
+    fill: "red",
+    viewBox: "0 0 24 24",
+    width: "24"
+  }, /*#__PURE__*/_react.default.createElement("g", null, /*#__PURE__*/_react.default.createElement("rect", {
+    fill: "none",
+    height: "24",
+    width: "24",
+    x: "0"
+  }), /*#__PURE__*/_react.default.createElement("polygon", {
+    points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+  })))), "  ", rating)), /*#__PURE__*/_react.default.createElement("p", null, title));
 }
 },{"react":"node_modules/react/index.js"}],"Components/Form.js":[function(require,module,exports) {
 "use strict";

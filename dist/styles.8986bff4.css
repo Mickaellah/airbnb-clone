@@ -85,6 +85,10 @@ img {
     cursor: pointer;
 }
 
+p > span > svg {
+    margin-inline-end: 16px;
+}
+
 @media (max-width: 900px) {
     body {
         max-width: 700px;
@@ -103,7 +107,7 @@ img {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .card-list {
         display: grid;
         grid-template-columns: auto;
