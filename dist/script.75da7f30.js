@@ -28508,116 +28508,7 @@ function Form(props) {
 
 var _default = Form;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = HotelComponents;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _stays = _interopRequireDefault(require("../stays.json"));
-
-var _Hotel = _interopRequireDefault(require("../Components/Hotel"));
-
-var _Form = _interopRequireDefault(require("../Components/Form"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function HotelComponents() {
-  var _useState = (0, _react.useState)(''),
-      _useState2 = _slicedToArray(_useState, 2),
-      location = _useState2[0],
-      setLocation = _useState2[1];
-
-  var _useState3 = (0, _react.useState)(''),
-      _useState4 = _slicedToArray(_useState3, 2),
-      guest = _useState4[0],
-      setGuest = _useState4[1];
-
-  var _useState5 = (0, _react.useState)([]),
-      _useState6 = _slicedToArray(_useState5, 2),
-      data = _useState6[0],
-      setData = _useState6[1];
-
-  function searchData(e) {
-    e.preventDefault();
-    setData(_stays.default);
-  }
-
-  function filterNumberOfGuest(e) {
-    setGuest(e.target.value);
-
-    var filteredGuest = _stays.default.filter(function (guest) {
-      return guest.maxGuests.toString() === e.target.value;
-    });
-
-    setData(filteredGuest);
-    console.log(filteredGuest);
-  }
-
-  function filteredLocation(e) {
-    setLocation(e.target.value);
-
-    var filteredCity = _stays.default.filter(function (stay) {
-      return stay.city.toLowerCase() === e.target.value;
-    });
-
-    setData(filteredCity);
-  }
-
-  var mapData = data.map(function (stay) {
-    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
-      key: stay.title
-    }, stay));
-  });
-
-  var filteredStays = _stays.default.map(function (stay) {
-    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
-      key: stay.title
-    }, stay));
-  });
-
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
-    className: "form",
-    onSubmit: searchData
-  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    onChange: filteredLocation,
-    inputChange: filterNumberOfGuest,
-    type: "number",
-    placeholder: "Add guests",
-    name: "guests",
-    id: "guests",
-    value: location,
-    guests: guest
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    type: "submit",
-    className: "endIcon"
-  }, "Search")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "card-list"
-  }, location || guest ? mapData : filteredStays));
-}
-},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js"}],"Components/Modal.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"Components/Modal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28626,6 +28517,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _Form = _interopRequireDefault(require("./Form"));
+
+var _HotelComponents = require("./HotelComponents");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28665,21 +28560,27 @@ var Modal = /*#__PURE__*/function (_React$Component) {
   _createClass(Modal, [{
     key: "render",
     value: function render() {
-      var _this = this;
-
       if (!this.props.show) {
         return null;
       }
 
-      var _onClose = function onClose(e) {
-        _this.props.onClose && _this.props.onClose(e);
-      };
-
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, this.props.children), /*#__PURE__*/_react.default.createElement("button", {
-        onClose: function onClose(e) {
-          _onClose(e);
-        }
-      }, "Close"));
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "Modal"
+      }, /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: _HotelComponents.searchData
+      }, /*#__PURE__*/_react.default.createElement(_Form.default, {
+        onChange: this.props.onChange,
+        inputChange: this.props.inputChange,
+        type: "number",
+        placeholder: "Add guests",
+        name: "guests",
+        id: "guests",
+        value: this.props.value,
+        guests: this.props.guests
+      }), /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        className: "endIcon"
+      }, "Search")));
     }
   }]);
 
@@ -28687,7 +28588,120 @@ var Modal = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.default = Modal;
-},{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Form":"Components/Form.js","./HotelComponents":"Components/HotelComponents.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.HotelComponents = HotelComponents;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _stays = _interopRequireDefault(require("../stays.json"));
+
+var _Hotel = _interopRequireDefault(require("../Components/Hotel"));
+
+var _Modal = _interopRequireDefault(require("./Modal"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// import Form from "../Components/Form";
+function HotelComponents() {
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      location = _useState2[0],
+      setLocation = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      guest = _useState4[0],
+      setGuest = _useState4[1];
+
+  var _useState5 = (0, _react.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      data = _useState6[0],
+      setData = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      show = _useState8[0],
+      setShow = _useState8[1];
+
+  function showModal() {
+    setShow(!show);
+  }
+
+  function searchData(e) {
+    e.preventDefault();
+    setData(_stays.default);
+  }
+
+  function filterNumberOfGuest(e) {
+    setGuest(e.target.value);
+
+    var filteredGuest = _stays.default.filter(function (guest) {
+      return guest.maxGuests.toString() === e.target.value;
+    });
+
+    setData(filteredGuest);
+    console.log(filteredGuest);
+  }
+
+  function filteredLocation(e) {
+    setLocation(e.target.value);
+
+    var filteredCity = _stays.default.filter(function (stay) {
+      return stay.city.toLowerCase() === e.target.value;
+    });
+
+    setData(filteredCity);
+  }
+
+  var mapData = data.map(function (stay) {
+    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
+      key: stay.title
+    }, stay));
+  });
+
+  var filteredStays = _stays.default.map(function (stay) {
+    return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
+      key: stay.title
+    }, stay));
+  });
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: showModal
+  }, "Show modal"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
+    onClose: showModal,
+    show: show,
+    onChange: filteredLocation,
+    inputChange: filterNumberOfGuest,
+    value: location,
+    guests: guest
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-list"
+  }, location || guest ? mapData : filteredStays));
+}
+},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","./Modal":"Components/Modal.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28697,7 +28711,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _HotelComponents = _interopRequireDefault(require("../Components/HotelComponents"));
+var _HotelComponents = require("../Components/HotelComponents");
 
 var _Modal = _interopRequireDefault(require("../Components/Modal"));
 
@@ -28729,50 +28743,21 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var App = /*#__PURE__*/function (_React$Component) {
   _inherits(App, _React$Component);
 
   var _super = _createSuper(App);
 
   function App() {
-    var _this;
-
     _classCallCheck(this, App);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      show: false
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "showModal", function (e) {
-      _this.setState({
-        show: !_this.state.show
-      });
-    });
-
-    return _this;
+    return _super.apply(this, arguments);
   }
 
   _createClass(App, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
-        onClick: function onClick(e) {
-          _this2.showModal();
-        }
-      }, "Show Modal"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
-        onClose: this.showModal,
-        show: this.state.show
-      }, "Message in modal"), /*#__PURE__*/_react.default.createElement(_HotelComponents.default, null));
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_HotelComponents.HotelComponents, null));
     }
   }]);
 
@@ -28821,7 +28806,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64333" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
