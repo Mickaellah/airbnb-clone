@@ -1,8 +1,5 @@
 import React from "react";
 import Form from "./Form";
-import { filterNumberOfGuest } from "./HotelComponents";
-import { filteredLocation } from "./HotelComponents";
-import { searchData } from "./HotelComponents";
 
 export default class Modal extends React.Component {
 
@@ -13,7 +10,7 @@ export default class Modal extends React.Component {
 
         return (
             <div className="Modal">
-                <form onSubmit={searchData}>
+                <form onSubmit={this.props.onClick}>
                     <Form 
                         onChange={this.props.onChange}
                         inputChange={this.props.inputChange}

@@ -28520,8 +28520,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _Form = _interopRequireDefault(require("./Form"));
 
-var _HotelComponents = require("./HotelComponents");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -28567,7 +28565,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "Modal"
       }, /*#__PURE__*/_react.default.createElement("form", {
-        onSubmit: _HotelComponents.searchData
+        onSubmit: this.props.onClick
       }, /*#__PURE__*/_react.default.createElement(_Form.default, {
         onChange: this.props.onChange,
         inputChange: this.props.inputChange,
@@ -28588,7 +28586,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.default = Modal;
-},{"react":"node_modules/react/index.js","./Form":"Components/Form.js","./HotelComponents":"Components/HotelComponents.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Form":"Components/Form.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28691,6 +28689,7 @@ function HotelComponents() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
     onClick: showModal
   }, "Show modal"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
+    onClick: searchData,
     onClose: showModal,
     show: show,
     onChange: filteredLocation,
@@ -28806,7 +28805,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64685" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61038" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

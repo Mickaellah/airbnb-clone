@@ -47,7 +47,7 @@ export function HotelComponents() {
     return (
         <>
             <button onClick={showModal}>Show modal</button>
-            <Modal onClose={showModal} show={show} onChange={filteredLocation} inputChange={filterNumberOfGuest} value={location} guests={guest}/>
+            <Modal onClick={searchData} onClose={showModal} show={show} onChange={filteredLocation} inputChange={filterNumberOfGuest} value={location} guests={guest}/>
             <div className="card-list">
                 {(location || guest) ? mapData : filteredStays}
             </div>
