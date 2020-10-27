@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { HotelComponents } from "../Components/HotelComponents";
-import Modal from "../Components/Modal";
 
-class App extends React.Component {
+function App() {
 
-render(){
     return (
         <>
             <HotelComponents />
         </>
     )
-}
 }
 
 export default App

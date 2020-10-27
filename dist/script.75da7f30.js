@@ -28487,6 +28487,7 @@ function Form(props) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("select", {
     className: "location",
     value: props.value,
+    onClick: props.click,
     onChange: props.onChange
   }, /*#__PURE__*/_react.default.createElement("option", null, "Choose a location"), /*#__PURE__*/_react.default.createElement("option", {
     value: "helsinki"
@@ -28499,94 +28500,20 @@ function Form(props) {
   }, "Oulu")), /*#__PURE__*/_react.default.createElement("input", {
     type: props.type,
     name: props.name,
+    onClick: props.click,
     onChange: props.inputChange,
     value: props.guests,
     id: props.id,
     placeholder: props.placeholder
-  }));
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit",
+    className: "endIcon"
+  }, "Search"));
 }
 
 var _default = Form;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"Components/Modal.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Form = _interopRequireDefault(require("./Form"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-var Modal = /*#__PURE__*/function (_React$Component) {
-  _inherits(Modal, _React$Component);
-
-  var _super = _createSuper(Modal);
-
-  function Modal() {
-    _classCallCheck(this, Modal);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(Modal, [{
-    key: "render",
-    value: function render() {
-      if (!this.props.show) {
-        return null;
-      }
-
-      return /*#__PURE__*/_react.default.createElement("div", {
-        className: "Modal"
-      }, /*#__PURE__*/_react.default.createElement("form", {
-        onSubmit: this.props.onClick
-      }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-        onChange: this.props.onChange,
-        inputChange: this.props.inputChange,
-        type: "number",
-        placeholder: "Add guests",
-        name: "guests",
-        id: "guests",
-        value: this.props.value,
-        guests: this.props.guests
-      }), /*#__PURE__*/_react.default.createElement("button", {
-        type: "submit",
-        className: "endIcon"
-      }, "Search")));
-    }
-  }]);
-
-  return Modal;
-}(_react.default.Component);
-
-exports.default = Modal;
-},{"react":"node_modules/react/index.js","./Form":"Components/Form.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28600,7 +28527,7 @@ var _stays = _interopRequireDefault(require("../stays.json"));
 
 var _Hotel = _interopRequireDefault(require("../Components/Hotel"));
 
-var _Modal = _interopRequireDefault(require("./Modal"));
+var _Form = _interopRequireDefault(require("../Components/Form"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28622,7 +28549,6 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-// import Form from "../Components/Form";
 function HotelComponents() {
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
@@ -28643,10 +28569,6 @@ function HotelComponents() {
       _useState8 = _slicedToArray(_useState7, 2),
       show = _useState8[0],
       setShow = _useState8[1];
-
-  function showModal() {
-    setShow(!show);
-  }
 
   function searchData(e) {
     e.preventDefault();
@@ -28686,21 +28608,24 @@ function HotelComponents() {
     }, stay));
   });
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
-    onClick: showModal
-  }, "Show modal"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
-    onClick: searchData,
-    onClose: showModal,
-    show: show,
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
+    className: "form",
+    onSubmit: searchData
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
     onChange: filteredLocation,
     inputChange: filterNumberOfGuest,
+    type: "number",
+    placeholder: "Add guests",
+    name: "guests",
+    id: "guests",
     value: location,
-    guests: guest
-  }), /*#__PURE__*/_react.default.createElement("div", {
+    guests: guest,
+    show: show
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-list"
   }, location || guest ? mapData : filteredStays));
 }
-},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","./Modal":"Components/Modal.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28708,64 +28633,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _HotelComponents = require("../Components/HotelComponents");
 
-var _Modal = _interopRequireDefault(require("../Components/Modal"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-var App = /*#__PURE__*/function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  var _super = _createSuper(App);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(App, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_HotelComponents.HotelComponents, null));
-    }
-  }]);
-
-  return App;
-}(_react.default.Component);
+function App() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_HotelComponents.HotelComponents, null));
+}
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js","../Components/Modal":"Components/Modal.js"}],"script.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

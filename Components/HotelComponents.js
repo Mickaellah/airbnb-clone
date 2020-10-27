@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Stays from "../stays.json";
 import Hotel from "../Components/Hotel";
-import Modal from "./Modal";
-// import Form from "../Components/Form";
+import Form from "../Components/Form";
 
 
 export function HotelComponents() {
@@ -10,10 +9,6 @@ export function HotelComponents() {
     const [ guest, setGuest ] = useState('');
     const [ data, setData ] = useState([]);
     const [ show, setShow ] = useState(false);
-
-    function showModal() {
-        setShow(!show);
-    }
 
     function searchData(e) {
         e.preventDefault();
@@ -46,8 +41,19 @@ export function HotelComponents() {
 
     return (
         <>
-            <button onClick={showModal}>Show modal</button>
-            <Modal onClick={searchData} onClose={showModal} show={show} onChange={filteredLocation} inputChange={filterNumberOfGuest} value={location} guests={guest}/>
+            <form className="form" onSubmit={searchData}>
+                <Form 
+                    onChange={filteredLocation}
+                    inputChange={filterNumberOfGuest}
+                    type="number"
+                    placeholder="Add guests"
+                    name="guests"
+                    id="guests"
+                    value={location}
+                    guests={guest}
+                    show={show}
+                />
+            </form>
             <div className="card-list">
                 {(location || guest) ? mapData : filteredStays}
             </div>
