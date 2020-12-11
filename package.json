@@ -19,6 +19,7 @@
   "dependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-responsive-modal": "^5.1.1",
     "react-uid": "^2.3.0"
   }
 }

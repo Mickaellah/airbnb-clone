@@ -10,6 +10,14 @@ export function HotelComponents() {
     const [ data, setData ] = useState([]);
     const [ show, setShow ] = useState(false);
 
+    function openModal() {
+        setShow({ show: true });
+    }
+
+    function closeModal() {
+        setShow({ show: false });
+    }
+
     function searchData(e) {
         e.preventDefault();
         setData(Stays);
@@ -52,6 +60,8 @@ export function HotelComponents() {
                     value={location}
                     guests={guest}
                     show={show}
+                    openModal={openModal}
+                    closeModal={closeModal}
                 />
             </form>
             <div className="card-list">

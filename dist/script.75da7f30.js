@@ -28455,7 +28455,9 @@ function Hotel(_ref) {
     className: "container"
   }, superHost ? /*#__PURE__*/_react.default.createElement("button", {
     className: "host"
-  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
+  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds ? beds + " " + 'beds' : '')), /*#__PURE__*/_react.default.createElement("div", {
+    className: "rate"
+  }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     enableBackground: "new 0 0 24 24",
     height: "24",
@@ -28469,7 +28471,7 @@ function Hotel(_ref) {
     x: "0"
   }), /*#__PURE__*/_react.default.createElement("polygon", {
     points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
-  })))), "  ", rating)), /*#__PURE__*/_react.default.createElement("p", null, title));
+  })))), /*#__PURE__*/_react.default.createElement("span", null, " ", rating))), /*#__PURE__*/_react.default.createElement("p", null, title));
 }
 },{"react":"node_modules/react/index.js"}],"Components/Form.js":[function(require,module,exports) {
 "use strict";
@@ -28483,21 +28485,22 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import Location from '../img/location.svg';
 function Form(props) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("select", {
     className: "location",
     value: props.value,
-    onClick: props.click,
+    onClick: props.openModal,
     onChange: props.onChange
   }, /*#__PURE__*/_react.default.createElement("option", null, "Choose a location"), /*#__PURE__*/_react.default.createElement("option", {
     value: "helsinki"
-  }, "Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
+  }, " Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
     value: "turku"
-  }, "Turku"), /*#__PURE__*/_react.default.createElement("option", {
+  }, " Turku"), /*#__PURE__*/_react.default.createElement("option", {
     value: "vaasa"
-  }, "Vaasa"), /*#__PURE__*/_react.default.createElement("option", {
+  }, " Vaasa"), /*#__PURE__*/_react.default.createElement("option", {
     value: "oulu"
-  }, "Oulu")), /*#__PURE__*/_react.default.createElement("input", {
+  }, " Oulu")), /*#__PURE__*/_react.default.createElement("input", {
     type: props.type,
     name: props.name,
     onClick: props.click,
@@ -28570,6 +28573,18 @@ function HotelComponents() {
       show = _useState8[0],
       setShow = _useState8[1];
 
+  function openModal() {
+    setShow({
+      show: true
+    });
+  }
+
+  function closeModal() {
+    setShow({
+      show: false
+    });
+  }
+
   function searchData(e) {
     e.preventDefault();
     setData(_stays.default);
@@ -28620,12 +28635,53 @@ function HotelComponents() {
     id: "guests",
     value: location,
     guests: guest,
-    show: show
+    show: show,
+    openModal: openModal,
+    closeModal: closeModal
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-list"
   }, location || guest ? mapData : filteredStays));
 }
-},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js"}],"Components/Modal.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Form = _interopRequireDefault(require("../Components/Form"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Modal = function Modal(props) {
+  var show = props.show,
+      closeModal = props.closeModal;
+  var showHideClassName = show ? "modal display-block" : "modal display-none";
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: showHideClassName
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "modal-main"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Edit your search"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: closeModal
+  }, "X")), /*#__PURE__*/_react.default.createElement(_Form.default, {
+    onChange: props.onChange,
+    inputChange: props.inputChange,
+    type: "number",
+    placeholder: "Add guests",
+    name: "guests",
+    id: "guests",
+    value: props.value,
+    guests: props.guests,
+    show: props.show
+  })));
+};
+
+var _default = Modal;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../Components/Form":"Components/Form.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28637,15 +28693,17 @@ var _react = _interopRequireDefault(require("react"));
 
 var _HotelComponents = require("../Components/HotelComponents");
 
+var _Modal = _interopRequireDefault(require("../Components/Modal"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_HotelComponents.HotelComponents, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Modal.default, null), /*#__PURE__*/_react.default.createElement(_HotelComponents.HotelComponents, null));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js"}],"script.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Components/HotelComponents":"Components/HotelComponents.js","../Components/Modal":"Components/Modal.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28685,7 +28743,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63113" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
