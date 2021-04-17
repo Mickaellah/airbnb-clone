@@ -6,7 +6,7 @@ function App() {
 
     return (
         <>
-            <Modal />
+            {/* <Modal /> */}
             <HotelComponents />
         </>
     )

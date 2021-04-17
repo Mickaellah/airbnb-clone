@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Stays from "../stays.json";
 import Hotel from "../Components/Hotel";
 import Form from "../Components/Form";
+import Modal from "../Components/Modal";
 
 
 export function HotelComponents() {
@@ -12,10 +13,12 @@ export function HotelComponents() {
 
     function openModal() {
         setShow({ show: true });
+        console.log('Clicked');
     }
 
     function closeModal() {
         setShow({ show: false });
+        console.log(Clicked);
     }
 
     function searchData(e) {
@@ -64,6 +67,7 @@ export function HotelComponents() {
                     closeModal={closeModal}
                 />
             </form>
+            {show ? <Modal /> : ""}
             <div className="card-list">
                 {(location || guest) ? mapData : filteredStays}
             </div>

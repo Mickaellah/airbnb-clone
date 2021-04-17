@@ -8,7 +8,7 @@ const Modal = (props) => {
       <div className="modal-main">
         <div>
           <p>Edit your search</p>
-          <button onClick={closeModal}>X</button>
+          {/* <button type="button" className="close_button" onClick={closeModal}>X</button> */}
         </div>
         <Form 
             onChange={props.onChange}
