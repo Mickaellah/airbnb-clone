@@ -28452,18 +28452,20 @@ function Hotel(_ref) {
     src: photo,
     alt: title
   }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
-  }, superHost ? /*#__PURE__*/_react.default.createElement("button", {
+    className: superHost ? 'full-detail-container' : 'detail-container'
+  }, superHost ? /*#__PURE__*/_react.default.createElement("p", {
     className: "host"
-  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", null, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds ? beds + " " + 'beds' : '')), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", {
+    className: superHost ? 'superhost' : 'type'
+  }, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds ? beds + " " + 'beds' : '')), /*#__PURE__*/_react.default.createElement("div", {
     className: "rate"
   }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     enableBackground: "new 0 0 24 24",
-    height: "24",
-    fill: "red",
+    height: "16",
+    fill: "#EB5757",
     viewBox: "0 0 24 24",
-    width: "24"
+    width: "16"
   }, /*#__PURE__*/_react.default.createElement("g", null, /*#__PURE__*/_react.default.createElement("rect", {
     fill: "none",
     height: "24",
@@ -28471,10 +28473,12 @@ function Hotel(_ref) {
     x: "0"
   }), /*#__PURE__*/_react.default.createElement("polygon", {
     points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
-  })))), /*#__PURE__*/_react.default.createElement("span", null, " ", rating))), /*#__PURE__*/_react.default.createElement("p", null, title));
+  })))), /*#__PURE__*/_react.default.createElement("span", null, " ", rating))), /*#__PURE__*/_react.default.createElement("p", {
+    className: "title"
+  }, title));
 }
-},{"react":"node_modules/react/index.js"}],"img/searc-icon.svg":[function(require,module,exports) {
-module.exports = "/searc-icon.2c678321.svg";
+},{"react":"node_modules/react/index.js"}],"img/search-icon.svg":[function(require,module,exports) {
+module.exports = "/search-icon.c37cc2d7.svg";
 },{}],"Components/Form.js":[function(require,module,exports) {
 "use strict";
 
@@ -28485,18 +28489,25 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _searcIcon = _interopRequireDefault(require("../img/searc-icon.svg"));
+var _searchIcon = _interopRequireDefault(require("../img/search-icon.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import Location from '../img/location.svg';
 function Form(props) {
-  var openModal = props.openModal;
+  var openModal = props.openModal,
+      onChange = props.onChange,
+      inputChange = props.inputChange,
+      value = props.value,
+      type = props.type,
+      name = props.name,
+      placeholder = props.placeholder,
+      guests = props.guests,
+      id = props.id;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("select", {
     className: "location",
-    value: props.value,
-    onClick: props.openModal,
-    onChange: props.onChange
+    value: value,
+    onChange: onChange
   }, /*#__PURE__*/_react.default.createElement("option", null, "Choose a location"), /*#__PURE__*/_react.default.createElement("option", {
     value: "helsinki"
   }, " Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
@@ -28506,26 +28517,27 @@ function Form(props) {
   }, " Vaasa"), /*#__PURE__*/_react.default.createElement("option", {
     value: "oulu"
   }, " Oulu")), /*#__PURE__*/_react.default.createElement("input", {
-    type: props.type,
-    name: props.name,
-    onClick: props.click,
-    onChange: props.inputChange,
-    value: props.guests,
-    id: props.id,
-    placeholder: props.placeholder
+    type: type,
+    name: name,
+    onChange: inputChange,
+    value: guests,
+    id: id,
+    placeholder: placeholder
   }), /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     className: "endIcon",
     onClick: openModal
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _searcIcon.default,
+    src: _searchIcon.default,
     alt: "Search icon"
   })));
 }
 
 var _default = Form;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/searc-icon.svg":"img/searc-icon.svg"}],"Components/Modal.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/search-icon.svg":"img/search-icon.svg"}],"img/location.svg":[function(require,module,exports) {
+module.exports = "/location.1fd9a54b.svg";
+},{}],"Components/Modal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28537,32 +28549,59 @@ var _react = _interopRequireDefault(require("react"));
 
 var _Form = _interopRequireDefault(require("../Components/Form"));
 
+var _searchIcon = _interopRequireDefault(require("../img/search-icon.svg"));
+
+var _location = _interopRequireDefault(require("../img/location.svg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Modal = function Modal(props) {
+function Modal(props) {
   var show = props.show,
-      closeModal = props.closeModal;
+      closeModal = props.closeModal,
+      onChange = props.onChange,
+      inputChange = props.inputChange,
+      value = props.value,
+      guests = props.guests,
+      type = props.type,
+      name = props.name,
+      placeholder = props.placeholder,
+      id = props.id,
+      locations = props.locations;
   var showHideClassName = show ? "modal display-block" : "modal display-none";
   return /*#__PURE__*/_react.default.createElement("div", {
     className: showHideClassName
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-main"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Edit your search")), /*#__PURE__*/_react.default.createElement(_Form.default, {
-    onChange: props.onChange,
-    inputChange: props.inputChange,
-    type: "number",
-    placeholder: "Add guests",
-    name: "guests",
-    id: "guests",
-    value: props.value,
-    guests: props.guests,
-    show: props.show
-  })));
-};
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+    className: "close_button",
+    onClick: closeModal
+  }, "X")), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "location"
+  }, /*#__PURE__*/_react.default.createElement("span", null, "Location"), /*#__PURE__*/_react.default.createElement("span", null, "Helsinki, Finland")), locations.map(function (loc, index) {
+    return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+      src: _location.default,
+      alt: "Location icon"
+    }), /*#__PURE__*/_react.default.createElement("button", null, loc, ", Finland"));
+  })), /*#__PURE__*/_react.default.createElement("input", {
+    type: type,
+    name: name,
+    onChange: inputChange,
+    value: guests,
+    id: id,
+    placeholder: placeholder
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    className: "endIcon"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _searchIcon.default,
+    alt: "Search icon"
+  })))));
+}
 
+;
 var _default = Modal;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Components/Form":"Components/Form.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Components/Form":"Components/Form.js","../img/search-icon.svg":"img/search-icon.svg","../img/location.svg":"img/location.svg"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28582,9 +28621,9 @@ var _Modal = _interopRequireDefault(require("../Components/Modal"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -28596,7 +28635,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -28621,18 +28660,17 @@ function HotelComponents() {
       show = _useState8[0],
       setShow = _useState8[1];
 
+  var _useState9 = (0, _react.useState)(['Helsinki', 'Turku', 'Oulu', 'Vaasa']),
+      _useState10 = _slicedToArray(_useState9, 2),
+      locations = _useState10[0],
+      setLocations = _useState10[1];
+
   function openModal() {
-    setShow({
-      show: true
-    });
-    console.log('Clicked');
+    setShow(!show);
   }
 
   function closeModal() {
-    setShow({
-      show: false
-    });
-    console.log(Clicked);
+    setShow(false);
   }
 
   function searchData(e) {
@@ -28648,7 +28686,6 @@ function HotelComponents() {
     });
 
     setData(filteredGuest);
-    console.log(filteredGuest);
   }
 
   function filteredLocation(e) {
@@ -28660,6 +28697,18 @@ function HotelComponents() {
 
     setData(filteredCity);
   }
+
+  var filterPlaces = function filterPlaces(e) {
+    var placeFilter = e.target.value.toLowerCase();
+    var numberFilter = e.target.value;
+
+    var filteredPlaces = _stays.default.filter(function (place) {
+      return placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true);
+    });
+
+    console.log(filteredPlaces);
+    setData(filteredPlaces);
+  };
 
   var mapData = data.map(function (stay) {
     return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
@@ -28677,7 +28726,7 @@ function HotelComponents() {
     className: "form",
     onSubmit: searchData
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    onChange: filteredLocation,
+    onChange: filterPlaces,
     inputChange: filterNumberOfGuest,
     type: "number",
     placeholder: "Add guests",
@@ -28688,7 +28737,20 @@ function HotelComponents() {
     show: show,
     openModal: openModal,
     closeModal: closeModal
-  })), show ? /*#__PURE__*/_react.default.createElement(_Modal.default, null) : "", /*#__PURE__*/_react.default.createElement("div", {
+  })), show ? /*#__PURE__*/_react.default.createElement(_Modal.default, {
+    show: show,
+    closeModal: closeModal,
+    onChange: filterPlaces,
+    inputChange: filterNumberOfGuest,
+    value: location,
+    guests: guest,
+    openModal: openModal,
+    type: "number",
+    placeholder: "Add guests",
+    name: "guests",
+    id: "guests",
+    locations: locations
+  }) : "", /*#__PURE__*/_react.default.createElement("div", {
     className: "card-list"
   }, location || guest ? mapData : filteredStays));
 }
@@ -28726,7 +28788,7 @@ var _App = _interopRequireDefault(require("./pages/App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.default, null), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./pages/App":"pages/App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./pages/App":"pages/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28754,7 +28816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54146" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37237" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -28930,5 +28992,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","script.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","script.js"], null)
 //# sourceMappingURL=/script.75da7f30.js.map

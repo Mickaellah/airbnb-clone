@@ -1,7 +1,11 @@
 body {
-    max-width: 1114px;
+    max-width: 1253px;
     margin-inline-start: auto;
     margin-inline-end: auto;
+}
+
+button {
+    cursor: pointer;
 }
 
 .heading {
@@ -12,21 +16,28 @@ body {
 .heading_container {
     display: flex;
     justify-content: space-between;
+    margin-block-start: 83px;
+    margin-block-end: 32px;
+}
+
+.heading_container > .header {
+    margin: 0;
 }
 
 .heading_container > span {
-    margin-block-start: 32px;
+    margin-block-start: 22px;
 }
 
 .logo {
-    margin-inline-start: -45%;
+    width: 8%;
+    margin-block-start: 46px;
 }
 
 .card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 32px;
-    column-gap: 32px;
+    grid-column-gap: 34px;
+    column-gap: 34px;
 }
 
 .card {
@@ -34,49 +45,103 @@ body {
 }
 
 .card > img {
-    height: 222px;
-    width: 100%;
+    height: 269px;
+    width: 395px;
+    border-radius: 24px;
     object-fit: cover;
 }
 
-img {
-    max-width: 100%;
-    border-radius: 24px;
+.full-detail-container,
+.detail-container {
+    margin-block-start: 3px;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.full-detail-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.detail-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
 }
 
 .rate {
     display: flex;
     margin-block-start: 10px;
+    align-self: right;
+    justify-self: right;
 }
 
 .rate > span:nth-of-type(1) {
     margin-inline-end: 8px;
+    margin-block-start: 5px;
 }
 
 .rate > span:nth-of-type(2) {
     margin-block-start: 5px;
+    color: #4F4F4F;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
 }
 
 .host {
     border-radius: 12px;
-    height: 24px;
-    padding-inline: 16px;
+    padding-inline: 9px;
     background-color: white;
     margin-top: 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    border: 1px solid #4F4F4F;
+    color: #4F4F4F;
+    box-sizing: border-box;
+    padding-block-start: 7px;
+    padding-block-end: 6px;
+    width: fit-content;
+}
+
+.superhost,
+.type {
+    color: #828282;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+}
+
+.title {
+    margin: 0;
+    color: #333333;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
 }
 
 .form {
     position: absolute;
-    top: 0;
-    left: 65%;
+    top: 32px;
+    left: 75%;
     display: flex;
     margin-block-start: 16px;
+}
+
+.location {
+    background-color: white;
+    font-size: 14px;
+    color: #333333;
+}
+
+#guests {
+    color: #BDBDBD;
+    width: 20%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .location,
@@ -91,6 +156,7 @@ img {
 .location {
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
+    appearance: none;
 }
 
 .endIcon {
@@ -112,16 +178,21 @@ p > span > svg {
 
 .modal {
     position: absolute;
-    width: 100%;
+    width: 97vw;
+    height: 460px;
     top: 0;
     left: 0;
     background-color: white;
     color: black;
     padding-block-start: 93px;
     padding-block-end: 90px;
-    padding-inline: 96px;
 }
 
+.modal-main {
+    max-width: 1248px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
 
 @media (max-width: 900px) {
     body {

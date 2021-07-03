@@ -4,7 +4,7 @@
   "description": "Challenge: Create a small version of Airbnb - Windbnb with given data, and use React to handle the frontend. Don’t look at the existing solution. Fulfill user stories below:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Mickaellah/airbnb-clone#readme",
   "dependencies": {
+    "parcel-bundler": "^1.12.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-responsive-modal": "^5.1.1",
