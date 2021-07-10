@@ -2,7 +2,9 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 
 import Search from '../img/white-search-icon.svg';
-import location from '../img/location.svg';
+import Location from '../img/location.svg';
+import Plus from '../img/plus.svg';
+import Minus from '../img/minus.svg';
 
 const Form = styled("form")`
   display: grid;
@@ -85,6 +87,7 @@ const Label = styled("label")`
     font-size: 14px;
     line-height: 18px;
     color: #BDBDBD;
+    outline: none;
   }
 `;
 
@@ -123,6 +126,50 @@ const Button = styled("button")`
   }
 `;
 
+const CounterContainer = styled("div")`
+  margin-inline-start: 16px;
+
+  p {
+    color: #333333;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+
+    :first-child {
+      margin-block-start: 48px;
+    }
+
+    :last-child {
+      margin-block-start: 52px;
+    }
+    
+  }
+
+  small {
+    color: #BDBDBD;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+  }
+`;
+
+const CounterButtonContainer = styled("div")`
+  display: flex;
+  flex-direction: row;
+  margin-block-start: 12px;
+
+  button {
+    background-color: #ffffff;
+    border: 1px solid #828282;
+    border-radius: 4px;
+  }
+
+  span {
+    margin-inline-start: 15px;
+    margin-inline-end: 16px;
+  }
+`;
+
 function Modal(props) {
   const { 
     show, 
@@ -135,8 +182,11 @@ function Modal(props) {
   } = props;
 
   const showHideClassName = show ? "modal display-block" : "modal display-none";
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isInputFieldClicked, setIsInputFieldClicked] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Helsinki");
+  const [countForAdults, setCountForAdults] = useState(0);
+  const [count, setCount] = useState(0);
 
   const options = ["Helsinki", "Turku", "Oulu", "Vaasa"];
 
@@ -145,7 +195,29 @@ function Modal(props) {
   const onOptionClicked = value => () => {
     setSelectedOption(value);
     setIsOpen(false);
-};
+  };
+
+  const handleInput = () => setIsInputFieldClicked(!isInputFieldClicked);
+
+  const incrementAdultNumber = () => {
+    setCountForAdults(countForAdults + 1);
+  }
+
+  const decrementAdultNumber = () => {
+    if (countForAdults > 0) {
+      setCountForAdults(countForAdults - 1);
+    }
+  }
+
+  const incrementChildrenNumber = () => {
+    setCount(count + 1);
+  }
+
+  const decrementChildrenNumber = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  }
 
   return (
     <div className={showHideClassName}>
@@ -165,7 +237,7 @@ function Modal(props) {
                   <DropDownList>
                     {options.map((option, index) => (
                       <ListContainer key={index}>
-                        <img className="location-icon" src={location} alt="Location icon" />
+                        <img className="location-icon" src={Location} alt="Location icon" />
                         <ListItem onClick={onOptionClicked(option)}>
                             {option}, Finland
                         </ListItem>
@@ -175,12 +247,45 @@ function Modal(props) {
                 </DropDownListContainer>
               )}
           </DropDownContainer>
-          <Label>
-            <span>
-                Guests
-            </span>
-            <input type={type} name={name} onChange={inputChange} value={guests} placeholder={placeholder}/>
-          </Label>
+          <div>
+            <Label onClick={handleInput}>
+              <span>
+                  Guests
+              </span>
+              <input type={type} name={name} onChange={inputChange} value={guests} placeholder={placeholder}/>
+            </Label>
+
+            {isInputFieldClicked && (
+              <CounterContainer>
+                <div>
+                  <p>Adults</p>
+                  <small>Ages 13 or above</small>
+                  <CounterButtonContainer>
+                    <button type="button" onClick={decrementAdultNumber}>
+                      <img src={Minus} alt="Minus icon" />
+                    </button>
+                    <span>{countForAdults}</span>
+                    <button type="button" onClick={incrementAdultNumber}>
+                      <img src={Plus} alt="Plus icon" />
+                    </button>
+                  </CounterButtonContainer>
+                </div>
+                <div>
+                  <p>Children</p>
+                  <small>Ages 2 - 12</small>
+                  <CounterButtonContainer>
+                    <button type="button" onClick={decrementChildrenNumber}>
+                      <img src={Minus} alt="Minus icon" />
+                    </button>
+                    <span>{count}</span>
+                    <button type="button" onClick={incrementChildrenNumber}>
+                    <img src={Plus} alt="Plus icon" />
+                    </button>
+                  </CounterButtonContainer>
+                </div>
+              </CounterContainer>
+            )}
+          </div>
           <ButtonContainer>
             <Button type="button">
               <img src={Search} alt="Search icon" />

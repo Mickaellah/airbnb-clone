@@ -30794,6 +30794,10 @@ exports.default = _default;
 module.exports = "/white-search-icon.d2966801.svg";
 },{}],"img/location.svg":[function(require,module,exports) {
 module.exports = "/location.1fd9a54b.svg";
+},{}],"img/plus.svg":[function(require,module,exports) {
+module.exports = "/plus.f3e11ee5.svg";
+},{}],"img/minus.svg":[function(require,module,exports) {
+module.exports = "/minus.34ccee33.svg";
 },{}],"Components/Modal.js":[function(require,module,exports) {
 "use strict";
 
@@ -30810,7 +30814,11 @@ var _whiteSearchIcon = _interopRequireDefault(require("../img/white-search-icon.
 
 var _location = _interopRequireDefault(require("../img/location.svg"));
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var _plus = _interopRequireDefault(require("../img/plus.svg"));
+
+var _minus = _interopRequireDefault(require("../img/minus.svg"));
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30839,9 +30847,11 @@ var DropDownListContainer = (0, _styledComponents.default)("nav")(_templateObjec
 var DropDownList = (0, _styledComponents.default)("ul")(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  padding: 0;\n"])));
 var ListContainer = (0, _styledComponents.default)("div")(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  :first-child {\n    margin-block-start: 41px;\n  }\n\n  :not(:first-child) {\n    margin-block-start: 36px;\n  }\n"])));
 var ListItem = (0, _styledComponents.default)("li")(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  list-style: none;\n  text-align: center;\n  vertical-align: center;\n  margin-inline-start: 10px;\n  color: #4F4F4F;\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n"])));
-var Label = (0, _styledComponents.default)("label")(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  width: auto;\n  padding-block-start: 12px;\n  padding-block-end: 11px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: fit-content;\n\n  span {\n    font-weight: 800;\n    font-size: 9px;\n    line-height: 11px;\n    text-transform: uppercase;\n    color: #333333;\n    margin-block-start: 4px;\n  }\n\n  input {\n    border: none;\n    font-size: 14px;\n    line-height: 18px;\n    color: #BDBDBD;\n  }\n"])));
+var Label = (0, _styledComponents.default)("label")(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  width: auto;\n  padding-block-start: 12px;\n  padding-block-end: 11px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: fit-content;\n\n  span {\n    font-weight: 800;\n    font-size: 9px;\n    line-height: 11px;\n    text-transform: uppercase;\n    color: #333333;\n    margin-block-start: 4px;\n  }\n\n  input {\n    border: none;\n    font-size: 14px;\n    line-height: 18px;\n    color: #BDBDBD;\n    outline: none;\n  }\n"])));
 var ButtonContainer = (0, _styledComponents.default)("div")(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  padding-block-start: 4px;\n  padding-block-end: 6px;\n  border-top-right-radius: 16px;\n  border-bottom-right-radius: 16px;\n  border: none;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  color: black;\n  cursor: pointer;\n  background-color: white;\n  height: fit-content;\n"])));
 var Button = (0, _styledComponents.default)("button")(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  background-color: #EB5757;\n  color: #ffffff;\n  border: none;\n  border-radius: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  padding-block-start: 15px;\n  padding-block-end: 16px;\n  padding-inline-start: 27px;\n  padding-inline-end: 25px;\n  margin-inline-start: auto;\n  margin-inline-end: auto;\n\n  span {\n    margin-inline-start: 11px;\n    vertical-align: center;\n    text-align: center;\n  }\n"])));
+var CounterContainer = (0, _styledComponents.default)("div")(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  margin-inline-start: 16px;\n\n  p {\n    color: #333333;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n\n    :first-child {\n      margin-block-start: 48px;\n    }\n\n    :last-child {\n      margin-block-start: 52px;\n    }\n    \n  }\n\n  small {\n    color: #BDBDBD;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n  }\n"])));
+var CounterButtonContainer = (0, _styledComponents.default)("div")(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  margin-block-start: 12px;\n\n  button {\n    background-color: #ffffff;\n    border: 1px solid #828282;\n    border-radius: 4px;\n  }\n\n  span {\n    margin-inline-start: 15px;\n    margin-inline-end: 16px;\n  }\n"])));
 
 function Modal(props) {
   var show = props.show,
@@ -30858,10 +30868,25 @@ function Modal(props) {
       isOpen = _useState2[0],
       setIsOpen = _useState2[1];
 
-  var _useState3 = (0, _react.useState)("Helsinki"),
+  var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      selectedOption = _useState4[0],
-      setSelectedOption = _useState4[1];
+      isInputFieldClicked = _useState4[0],
+      setIsInputFieldClicked = _useState4[1];
+
+  var _useState5 = (0, _react.useState)("Helsinki"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      selectedOption = _useState6[0],
+      setSelectedOption = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(0),
+      _useState8 = _slicedToArray(_useState7, 2),
+      countForAdults = _useState8[0],
+      setCountForAdults = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(0),
+      _useState10 = _slicedToArray(_useState9, 2),
+      count = _useState10[0],
+      setCount = _useState10[1];
 
   var options = ["Helsinki", "Turku", "Oulu", "Vaasa"];
 
@@ -30874,6 +30899,30 @@ function Modal(props) {
       setSelectedOption(value);
       setIsOpen(false);
     };
+  };
+
+  var handleInput = function handleInput() {
+    return setIsInputFieldClicked(!isInputFieldClicked);
+  };
+
+  var incrementAdultNumber = function incrementAdultNumber() {
+    setCountForAdults(countForAdults + 1);
+  };
+
+  var decrementAdultNumber = function decrementAdultNumber() {
+    if (countForAdults > 0) {
+      setCountForAdults(countForAdults - 1);
+    }
+  };
+
+  var incrementChildrenNumber = function incrementChildrenNumber() {
+    setCount(count + 1);
+  };
+
+  var decrementChildrenNumber = function decrementChildrenNumber() {
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -30895,13 +30944,39 @@ function Modal(props) {
     }), /*#__PURE__*/_react.default.createElement(ListItem, {
       onClick: onOptionClicked(option)
     }, option, ", Finland"));
-  })))), /*#__PURE__*/_react.default.createElement(Label, null, /*#__PURE__*/_react.default.createElement("span", null, "Guests"), /*#__PURE__*/_react.default.createElement("input", {
+  })))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Label, {
+    onClick: handleInput
+  }, /*#__PURE__*/_react.default.createElement("span", null, "Guests"), /*#__PURE__*/_react.default.createElement("input", {
     type: type,
     name: name,
     onChange: inputChange,
     value: guests,
     placeholder: placeholder
-  })), /*#__PURE__*/_react.default.createElement(ButtonContainer, null, /*#__PURE__*/_react.default.createElement(Button, {
+  })), isInputFieldClicked && /*#__PURE__*/_react.default.createElement(CounterContainer, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Adults"), /*#__PURE__*/_react.default.createElement("small", null, "Ages 13 or above"), /*#__PURE__*/_react.default.createElement(CounterButtonContainer, null, /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: decrementAdultNumber
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _minus.default,
+    alt: "Minus icon"
+  })), /*#__PURE__*/_react.default.createElement("span", null, countForAdults), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: incrementAdultNumber
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _plus.default,
+    alt: "Plus icon"
+  })))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Children"), /*#__PURE__*/_react.default.createElement("small", null, "Ages 2 - 12"), /*#__PURE__*/_react.default.createElement(CounterButtonContainer, null, /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: decrementChildrenNumber
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _minus.default,
+    alt: "Minus icon"
+  })), /*#__PURE__*/_react.default.createElement("span", null, count), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: incrementChildrenNumber
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _plus.default,
+    alt: "Plus icon"
+  })))))), /*#__PURE__*/_react.default.createElement(ButtonContainer, null, /*#__PURE__*/_react.default.createElement(Button, {
     type: "button"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _whiteSearchIcon.default,
@@ -30912,7 +30987,7 @@ function Modal(props) {
 ;
 var _default = Modal;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../img/white-search-icon.svg":"img/white-search-icon.svg","../img/location.svg":"img/location.svg"}],"Components/HotelComponents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../img/white-search-icon.svg":"img/white-search-icon.svg","../img/location.svg":"img/location.svg","../img/plus.svg":"img/plus.svg","../img/minus.svg":"img/minus.svg"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31113,7 +31188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44267" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45063" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

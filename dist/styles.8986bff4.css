@@ -181,12 +181,12 @@ p > span > svg {
 .modal {
     position: absolute;
     width: 97vw;
-    height: 460px;
     top: 0;
     left: 0;
     background-color: white;
     color: black;
     padding-block-start: 93px;
+    padding-block-end: 70px;
 }
 
 .modal-main {
