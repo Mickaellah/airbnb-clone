@@ -10,7 +10,6 @@ export function HotelComponents() {
     const [ guest, setGuest ] = useState('');
     const [ data, setData ] = useState([]);
     const [ show, setShow ] = useState(false);
-    const [locations, setLocations] = useState(['Helsinki', 'Turku', 'Oulu', 'Vaasa']);
 
     function openModal() {
         setShow(!show);
@@ -33,31 +32,24 @@ export function HotelComponents() {
         setData(filteredGuest);
     }
 
-    function filteredLocation(e) {
-        setLocation(e.target.value);
-        const filteredCity = stays.filter(stay => { return stay.city.toLowerCase() === e.target.value
-        });
-        setData(filteredCity);
-    }
+    // const filterPlaces = (e) => {
+    //     const placeFilter = e.target.value.toLowerCase();
+    //     const numberFilter = e.target.value;
 
-    const filterPlaces = (e) => {
-        const placeFilter = e.target.value.toLowerCase();
-        const numberFilter = e.target.value;
+    //     const filteredPlaces = stays.filter(place => placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true));
 
-        const filteredPlaces = stays.filter(place => placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true));
+    //     console.log(filteredPlaces);
 
-        console.log(filteredPlaces);
+    //     setData(filteredPlaces);
+    // }
 
-        setData(filteredPlaces);
-    }
-
-    const mapData = data.map(stay => { 
-        return <Hotel key={stay.title} {...stay}/>
-    })
-
-    const filteredStays = stays.map(stay => { 
+    const mapData = stays.map(stay => { 
         return <Hotel key={stay.title} {...stay} />
     });
+
+    const filteredStays = data.map(stay => { 
+        return <Hotel key={stay.title} {...stay}/>
+    })
 
     return (
         <>
@@ -69,15 +61,17 @@ export function HotelComponents() {
             {show ? <Modal 
                         show={show}
                         closeModal={closeModal}
-                        onChange={filterPlaces}
                         inputChange={filterNumberOfGuest}
                         value={location}
                         guests={guest}
                         openModal={openModal}
                         placeholder="Add guests"
+                        setData={setData}
+                        setLocation={setLocation}
+                        setGuest={setGuest}
                      /> : ""}
             <div className="card-list">
-                {(location || guest) ? mapData : filteredStays}
+                {(location || guest) ? filteredStays : mapData}
             </div>
         </>
     )

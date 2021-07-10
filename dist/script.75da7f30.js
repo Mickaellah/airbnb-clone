@@ -30810,6 +30810,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _stays = _interopRequireDefault(require("../stays.json"));
+
 var _whiteSearchIcon = _interopRequireDefault(require("../img/white-search-icon.svg"));
 
 var _location = _interopRequireDefault(require("../img/location.svg"));
@@ -30860,7 +30862,10 @@ function Modal(props) {
       guests = props.guests,
       type = props.type,
       name = props.name,
-      placeholder = props.placeholder;
+      placeholder = props.placeholder,
+      setData = props.setData,
+      setLocation = props.setLocation,
+      setGuest = props.setGuest;
   var showHideClassName = show ? "modal display-block" : "modal display-none";
 
   var _useState = (0, _react.useState)(false),
@@ -30890,15 +30895,43 @@ function Modal(props) {
 
   var options = ["Helsinki", "Turku", "Oulu", "Vaasa"];
 
+  function optionSelected(e) {
+    // const value = e.target.attributes.getNamedItem("data-value").value;
+    // setLocation(value);
+    // console.log(e.target.dataset.value);
+    setSelectedOption(e.target.dataset.value);
+    setIsOpen(false); // const filteredLocation = stays.filter(stay => { return stay.city.toLowerCase() === value.toLowerCase()
+    // });
+    // setData(filteredLocation);
+  } // function filteredNumber(e) {
+  //   const value = countForAdults + count;
+  //   console.log(value);
+  //   setGuest(value);
+  //   const filteredGuest = stays.filter(guest => {
+  //     return guest.maxGuests.toString() === value.toString();
+  //   })
+  //   setData(filteredGuest);
+  //   console.log(filteredGuest);
+  // }
+
+
+  function filteredPlace(e) {
+    e.preventDefault();
+    var locationValue = e.target.dataset.value;
+    setLocation(locationValue);
+    var number = countForAdults + count;
+    setGuest(number);
+
+    var filteredPlaces = _stays.default.filter(function (place) {
+      return locationValue ? place.city === locationValue : true && (number ? place.maxGuests.toString() === number.toString() : true);
+    });
+
+    setData(filteredPlaces);
+    console.log(filteredPlaces);
+  }
+
   var toggling = function toggling() {
     return setIsOpen(!isOpen);
-  };
-
-  var onOptionClicked = function onOptionClicked(value) {
-    return function () {
-      setSelectedOption(value);
-      setIsOpen(false);
-    };
   };
 
   var handleInput = function handleInput() {
@@ -30932,7 +30965,9 @@ function Modal(props) {
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     className: "close_button",
     onClick: closeModal
-  }, "X")), /*#__PURE__*/_react.default.createElement(Form, null, /*#__PURE__*/_react.default.createElement(DropDownContainer, null, /*#__PURE__*/_react.default.createElement(DropDownHeader, {
+  }, "X")), /*#__PURE__*/_react.default.createElement(Form, {
+    onClick: filteredPlace
+  }, /*#__PURE__*/_react.default.createElement(DropDownContainer, null, /*#__PURE__*/_react.default.createElement(DropDownHeader, {
     onClick: toggling
   }, /*#__PURE__*/_react.default.createElement("span", null, "Location"), /*#__PURE__*/_react.default.createElement("p", null, selectedOption, ", Finland")), isOpen && /*#__PURE__*/_react.default.createElement(DropDownListContainer, null, /*#__PURE__*/_react.default.createElement(DropDownList, null, options.map(function (option, index) {
     return /*#__PURE__*/_react.default.createElement(ListContainer, {
@@ -30942,7 +30977,8 @@ function Modal(props) {
       src: _location.default,
       alt: "Location icon"
     }), /*#__PURE__*/_react.default.createElement(ListItem, {
-      onClick: onOptionClicked(option)
+      "data-value": option,
+      onClick: optionSelected
     }, option, ", Finland"));
   })))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Label, {
     onClick: handleInput
@@ -30977,7 +31013,7 @@ function Modal(props) {
     src: _plus.default,
     alt: "Plus icon"
   })))))), /*#__PURE__*/_react.default.createElement(ButtonContainer, null, /*#__PURE__*/_react.default.createElement(Button, {
-    type: "button"
+    type: "submit"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _whiteSearchIcon.default,
     alt: "Search icon"
@@ -30987,7 +31023,7 @@ function Modal(props) {
 ;
 var _default = Modal;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../img/white-search-icon.svg":"img/white-search-icon.svg","../img/location.svg":"img/location.svg","../img/plus.svg":"img/plus.svg","../img/minus.svg":"img/minus.svg"}],"Components/HotelComponents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../stays.json":"stays.json","../img/white-search-icon.svg":"img/white-search-icon.svg","../img/location.svg":"img/location.svg","../img/plus.svg":"img/plus.svg","../img/minus.svg":"img/minus.svg"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31046,11 +31082,6 @@ function HotelComponents() {
       show = _useState8[0],
       setShow = _useState8[1];
 
-  var _useState9 = (0, _react.useState)(['Helsinki', 'Turku', 'Oulu', 'Vaasa']),
-      _useState10 = _slicedToArray(_useState9, 2),
-      locations = _useState10[0],
-      setLocations = _useState10[1];
-
   function openModal() {
     setShow(!show);
   }
@@ -31072,42 +31103,26 @@ function HotelComponents() {
     });
 
     setData(filteredGuest);
-  }
+  } // const filterPlaces = (e) => {
+  //     const placeFilter = e.target.value.toLowerCase();
+  //     const numberFilter = e.target.value;
+  //     const filteredPlaces = stays.filter(place => placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true));
+  //     console.log(filteredPlaces);
+  //     setData(filteredPlaces);
+  // }
 
-  function filteredLocation(e) {
-    setLocation(e.target.value);
 
-    var filteredCity = _stays.default.filter(function (stay) {
-      return stay.city.toLowerCase() === e.target.value;
-    });
-
-    setData(filteredCity);
-  }
-
-  var filterPlaces = function filterPlaces(e) {
-    var placeFilter = e.target.value.toLowerCase();
-    var numberFilter = e.target.value;
-
-    var filteredPlaces = _stays.default.filter(function (place) {
-      return placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true);
-    });
-
-    console.log(filteredPlaces);
-    setData(filteredPlaces);
-  };
-
-  var mapData = data.map(function (stay) {
+  var mapData = _stays.default.map(function (stay) {
     return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
       key: stay.title
     }, stay));
   });
 
-  var filteredStays = _stays.default.map(function (stay) {
+  var filteredStays = data.map(function (stay) {
     return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
       key: stay.title
     }, stay));
   });
-
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
     className: "form",
     onSubmit: searchData
@@ -31116,15 +31131,17 @@ function HotelComponents() {
   })), show ? /*#__PURE__*/_react.default.createElement(_Modal.default, {
     show: show,
     closeModal: closeModal,
-    onChange: filterPlaces,
     inputChange: filterNumberOfGuest,
     value: location,
     guests: guest,
     openModal: openModal,
-    placeholder: "Add guests"
+    placeholder: "Add guests",
+    setData: setData,
+    setLocation: setLocation,
+    setGuest: setGuest
   }) : "", /*#__PURE__*/_react.default.createElement("div", {
     className: "card-list"
-  }, location || guest ? mapData : filteredStays));
+  }, location || guest ? filteredStays : mapData));
 }
 },{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js","../Components/Modal":"Components/Modal.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
@@ -31188,7 +31205,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45063" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46277" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

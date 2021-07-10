@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
 
+import stays from '../stays.json';
+
 import Search from '../img/white-search-icon.svg';
 import Location from '../img/location.svg';
 import Plus from '../img/plus.svg';
@@ -179,6 +181,9 @@ function Modal(props) {
     type,
     name,
     placeholder,
+    setData,
+    setLocation,
+    setGuest
   } = props;
 
   const showHideClassName = show ? "modal display-block" : "modal display-none";
@@ -190,12 +195,45 @@ function Modal(props) {
 
   const options = ["Helsinki", "Turku", "Oulu", "Vaasa"];
 
-  const toggling = () => setIsOpen(!isOpen);
-
-  const onOptionClicked = value => () => {
-    setSelectedOption(value);
+  function optionSelected(e) {
+    // const value = e.target.attributes.getNamedItem("data-value").value;
+    // setLocation(value);
+    // console.log(e.target.dataset.value);
+    setSelectedOption(e.target.dataset.value);
     setIsOpen(false);
-  };
+    // const filteredLocation = stays.filter(stay => { return stay.city.toLowerCase() === value.toLowerCase()
+    // });
+    // setData(filteredLocation);
+  }
+
+  // function filteredNumber(e) {
+  //   const value = countForAdults + count;
+  //   console.log(value);
+  //   setGuest(value);
+  //   const filteredGuest = stays.filter(guest => {
+  //     return guest.maxGuests.toString() === value.toString();
+  //   })
+  //   setData(filteredGuest);
+  //   console.log(filteredGuest);
+  // }
+
+
+  function filteredPlace(e) {
+    e.preventDefault();
+    const locationValue = e.target.dataset.value;
+    setLocation(locationValue);
+    const number = countForAdults + count;
+    setGuest(number);
+
+    const filteredPlaces = stays.filter(place => locationValue ? place.city === locationValue : true && (number ? place.maxGuests.toString() === number.toString() : true));
+
+    setData(filteredPlaces);
+    console.log(filteredPlaces);
+  }
+
+
+
+  const toggling = () => setIsOpen(!isOpen);
 
   const handleInput = () => setIsInputFieldClicked(!isInputFieldClicked);
 
@@ -225,7 +263,7 @@ function Modal(props) {
         <div>
           <button className="close_button" onClick={closeModal}>X</button>
         </div>
-        <Form>
+        <Form  onClick={filteredPlace}>
           <DropDownContainer>
             <DropDownHeader onClick={toggling}>
               <span>Location</span>
@@ -238,7 +276,7 @@ function Modal(props) {
                     {options.map((option, index) => (
                       <ListContainer key={index}>
                         <img className="location-icon" src={Location} alt="Location icon" />
-                        <ListItem onClick={onOptionClicked(option)}>
+                        <ListItem data-value={option} onClick={optionSelected}>
                             {option}, Finland
                         </ListItem>
                       </ListContainer>
@@ -287,7 +325,7 @@ function Modal(props) {
             )}
           </div>
           <ButtonContainer>
-            <Button type="button">
+            <Button type="submit">
               <img src={Search} alt="Search icon" />
               <span>Search</span>
             </Button>
