@@ -133,11 +133,6 @@ button {
     color: #333333;
 }
 
-#guests {
-    color: #BDBDBD;
-    width: 20%;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -145,18 +140,25 @@ input::-webkit-inner-spin-button {
 }
 
 .location,
-#guests {
+.guests {
+    font-size: 14px;
+    line-height: 18px;
     padding-block-start: 19px;
     padding-block-end: 18px;
     padding-inline: 16px;
     border: none;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 .location {
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
     appearance: none;
+}
+
+.guests {
+    color: #BDBDBD;
 }
 
 .endIcon {
@@ -185,13 +187,22 @@ p > span > svg {
     background-color: white;
     color: black;
     padding-block-start: 93px;
-    padding-block-end: 90px;
 }
 
 .modal-main {
     max-width: 1248px;
     margin-inline-start: auto;
     margin-inline-end: auto;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.location-icon {
+    width: 14px;
+    height: 19px;
 }
 
 @media (max-width: 900px) {

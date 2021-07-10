@@ -63,17 +63,7 @@ export function HotelComponents() {
         <>
             <form className="form" onSubmit={searchData}>
                 <Form 
-                    onChange={filterPlaces}
-                    inputChange={filterNumberOfGuest}
-                    type="number"
-                    placeholder="Add guests"
-                    name="guests"
-                    id="guests"
-                    value={location}
-                    guests={guest}
-                    show={show}
-                    openModal={openModal}
-                    closeModal={closeModal}
+                    openModal={openModal}   
                 />
             </form>
             {show ? <Modal 
@@ -84,11 +74,7 @@ export function HotelComponents() {
                         value={location}
                         guests={guest}
                         openModal={openModal}
-                        type="number"
                         placeholder="Add guests"
-                        name="guests"
-                        id="guests"
-                        locations={locations}
                      /> : ""}
             <div className="card-list">
                 {(location || guest) ? mapData : filteredStays}
