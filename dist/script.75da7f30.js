@@ -30896,24 +30896,9 @@ function Modal(props) {
   var options = ["Helsinki", "Turku", "Oulu", "Vaasa"];
 
   function optionSelected(e) {
-    // const value = e.target.attributes.getNamedItem("data-value").value;
-    // setLocation(value);
-    // console.log(e.target.dataset.value);
     setSelectedOption(e.target.dataset.value);
-    setIsOpen(false); // const filteredLocation = stays.filter(stay => { return stay.city.toLowerCase() === value.toLowerCase()
-    // });
-    // setData(filteredLocation);
-  } // function filteredNumber(e) {
-  //   const value = countForAdults + count;
-  //   console.log(value);
-  //   setGuest(value);
-  //   const filteredGuest = stays.filter(guest => {
-  //     return guest.maxGuests.toString() === value.toString();
-  //   })
-  //   setData(filteredGuest);
-  //   console.log(filteredGuest);
-  // }
-
+    setIsOpen(false);
+  }
 
   function filteredPlace(e) {
     e.preventDefault();
@@ -30923,7 +30908,7 @@ function Modal(props) {
     setGuest(number);
 
     var filteredPlaces = _stays.default.filter(function (place) {
-      return locationValue ? place.city === locationValue : true && (number ? place.maxGuests.toString() === number.toString() : true);
+      return (locationValue ? place.city.toLowerCase() === locationValue.toLowerCase() : true) && (number ? place.maxGuests.toString() === number.toString() : true);
     });
 
     setData(filteredPlaces);
@@ -31205,7 +31190,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46277" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38689" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

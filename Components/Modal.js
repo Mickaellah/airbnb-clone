@@ -196,27 +196,9 @@ function Modal(props) {
   const options = ["Helsinki", "Turku", "Oulu", "Vaasa"];
 
   function optionSelected(e) {
-    // const value = e.target.attributes.getNamedItem("data-value").value;
-    // setLocation(value);
-    // console.log(e.target.dataset.value);
     setSelectedOption(e.target.dataset.value);
     setIsOpen(false);
-    // const filteredLocation = stays.filter(stay => { return stay.city.toLowerCase() === value.toLowerCase()
-    // });
-    // setData(filteredLocation);
   }
-
-  // function filteredNumber(e) {
-  //   const value = countForAdults + count;
-  //   console.log(value);
-  //   setGuest(value);
-  //   const filteredGuest = stays.filter(guest => {
-  //     return guest.maxGuests.toString() === value.toString();
-  //   })
-  //   setData(filteredGuest);
-  //   console.log(filteredGuest);
-  // }
-
 
   function filteredPlace(e) {
     e.preventDefault();
@@ -225,7 +207,7 @@ function Modal(props) {
     const number = countForAdults + count;
     setGuest(number);
 
-    const filteredPlaces = stays.filter(place => locationValue ? place.city === locationValue : true && (number ? place.maxGuests.toString() === number.toString() : true));
+    const filteredPlaces = stays.filter(place => (locationValue ? place.city.toLowerCase() === locationValue.toLowerCase() : true) && (number ? place.maxGuests.toString() === number.toString() : true));
 
     setData(filteredPlaces);
     console.log(filteredPlaces);
