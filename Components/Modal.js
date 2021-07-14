@@ -181,6 +181,7 @@ function Modal(props) {
     type,
     name,
     placeholder,
+    data,
     setData,
     setLocation,
     setGuest

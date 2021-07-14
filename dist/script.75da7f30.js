@@ -30863,6 +30863,7 @@ function Modal(props) {
       type = props.type,
       name = props.name,
       placeholder = props.placeholder,
+      data = props.data,
       setData = props.setData,
       setLocation = props.setLocation,
       setGuest = props.setGuest;
@@ -31190,7 +31191,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38689" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35729" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
