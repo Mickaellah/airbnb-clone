@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+
 import stays from "../stays.json";
 import Hotel from "../Components/Hotel";
 import Form from "../Components/Form";
 import Modal from "../Components/Modal";
-
 
 export function HotelComponents() {
     const [ location, setLocation ] = useState('');
@@ -24,25 +25,6 @@ export function HotelComponents() {
         setData(stays);
     }
 
-    function filterNumberOfGuest(e) {
-        setGuest(e.target.value);
-        const filteredGuest = stays.filter(guest => {
-            return guest.maxGuests.toString() === e.target.value;
-        })
-        setData(filteredGuest);
-    }
-
-    // const filterPlaces = (e) => {
-    //     const placeFilter = e.target.value.toLowerCase();
-    //     const numberFilter = e.target.value;
-
-    //     const filteredPlaces = stays.filter(place => placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true));
-
-    //     console.log(filteredPlaces);
-
-    //     setData(filteredPlaces);
-    // }
-
     const mapData = stays.map(stay => { 
         return <Hotel key={stay.title} {...stay} />
     });
@@ -52,7 +34,7 @@ export function HotelComponents() {
     })
 
     return (
-        <>
+        <div>
             <form className="form" onSubmit={searchData}>
                 <Form 
                     openModal={openModal}   
@@ -61,7 +43,6 @@ export function HotelComponents() {
             {show ? <Modal 
                         show={show}
                         closeModal={closeModal}
-                        inputChange={filterNumberOfGuest}
                         value={location}
                         guests={guest}
                         openModal={openModal}
@@ -73,6 +54,6 @@ export function HotelComponents() {
             <div className="card-list">
                 {(location || guest) ? filteredStays : mapData}
             </div>
-        </>
+        </div>
     )
 }

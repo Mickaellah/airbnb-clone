@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url('./GlobalStyles/fonts/Montserrat-Bold.woff2'),
+        url('./GlobalStyles/fonts/Montserrat-Bold.woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url('./GlobalStyles/fonts/Montserrat-Medium.woff2'),
+        url('./GlobalStyles/fonts/Montserrat-Medium.woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 body {
     max-width: 1253px;
     margin-inline-start: auto;
@@ -21,10 +37,16 @@ button {
 }
 
 .heading_container > .header {
+    font-family: "Montserrat Bold";
+    font-size: 24px;
+    line-height: 29.26px;
     margin: 0;
 }
 
 .heading_container > span {
+    font-family: "Montserrat Medium";
+    font-size: 14px;
+    line-height: 17.07px;
     margin-block-start: 22px;
 }
 
@@ -180,7 +202,6 @@ p > span > svg {
 
 .modal {
     position: absolute;
-    width: 97vw;
     top: 0;
     left: 0;
     background-color: white;

@@ -7,6 +7,16 @@ import Search from '../img/white-search-icon.svg';
 import Location from '../img/location.svg';
 import Plus from '../img/plus.svg';
 import Minus from '../img/minus.svg';
+import { fonts } from "../GlobalStyles/fonts";
+
+const ModalContainer = styled("div")`
+  @media (max-width: 900px) {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`;
 
 const Form = styled("form")`
   display: grid;
@@ -16,6 +26,7 @@ const Form = styled("form")`
 const DropDownContainer = styled("div")`
 `;
 const DropDownHeader = styled("div")`
+  ${fonts}
   color: #333333;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
@@ -25,6 +36,7 @@ const DropDownHeader = styled("div")`
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 
   span {
+    font-family: "Mulish Extra Bold";
     font-size: 9px;
     line-height: 11px;
     font-weight: 800;
@@ -32,6 +44,7 @@ const DropDownHeader = styled("div")`
   }
 
   p {
+    font-family: "Mulish Regular";
     font-size: 14px;
     line-height: 18px;
     cursor: pointer;
@@ -55,6 +68,8 @@ const ListContainer = styled("div")`
   }
 `;
 const ListItem = styled("li")`
+  ${fonts}
+  font-family: "Mulish Regular";
   list-style: none;
   text-align: center;
   vertical-align: center;
@@ -66,6 +81,7 @@ const ListItem = styled("li")`
 `;
 
 const Label = styled("label")`
+  ${fonts}
   width: auto;
   padding-block-start: 12px;
   padding-block-end: 11px;
@@ -76,6 +92,7 @@ const Label = styled("label")`
   height: fit-content;
 
   span {
+    font-family: "Mulish Extra Bold";
     font-weight: 800;
     font-size: 9px;
     line-height: 11px;
@@ -85,6 +102,7 @@ const Label = styled("label")`
   }
 
   input {
+    font-family: "Mulish Regular";
     border: none;
     font-size: 14px;
     line-height: 18px;
@@ -122,6 +140,7 @@ const Button = styled("button")`
   margin-inline-end: auto;
 
   span {
+    font-family: "Mulish Bold";
     margin-inline-start: 11px;
     vertical-align: center;
     text-align: center;
@@ -132,6 +151,7 @@ const CounterContainer = styled("div")`
   margin-inline-start: 16px;
 
   p {
+    font-family: "Mulish Regular";
     color: #333333;
     font-size: 14px;
     line-height: 18px;
@@ -148,6 +168,7 @@ const CounterContainer = styled("div")`
   }
 
   small {
+    font-family: "Mulish Regular";
     color: #BDBDBD;
     font-size: 14px;
     line-height: 18px;
@@ -241,7 +262,7 @@ function Modal(props) {
   }
 
   return (
-    <div className={showHideClassName}>
+    <ModalContainer className={showHideClassName}>
       <div className="modal-main">
         <div>
           <button className="close_button" onClick={closeModal}>X</button>
@@ -315,7 +336,7 @@ function Modal(props) {
           </ButtonContainer>
         </Form>
       </div>
-    </div>
+    </ModalContainer>
   );
 };
 export default Modal;

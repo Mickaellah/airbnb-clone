@@ -28285,238 +28285,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"stays.json":[function(require,module,exports) {
-module.exports = [{
-  "city": "Helsinki",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Stylist apartment in center of the city",
-  "rating": 4.4,
-  "maxGuests": 3,
-  "type": "Entire apartment",
-  "beds": 2,
-  "photo": "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-}, {
-  "city": "Turku",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Nice apartment in center of Helsinki",
-  "rating": 4.2,
-  "maxGuests": 5,
-  "type": "Entire apartment",
-  "beds": 3,
-  "photo": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-}, {
-  "city": "Helsinki",
-  "country": "Finland",
-  "superHost": true,
-  "title": "Arty interior in 1900 wooden house",
-  "rating": 4.5,
-  "maxGuests": 10,
-  "type": "Entire house",
-  "beds": 6,
-  "photo": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-}, {
-  "city": "Helsinki",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Apartment next to market spuare",
-  "rating": 4.48,
-  "maxGuests": 3,
-  "type": "Entire apartment",
-  "beds": null,
-  "photo": "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-}, {
-  "city": "Turku",
-  "country": "Finland",
-  "superHost": true,
-  "title": "Villa Aurora guest-house",
-  "rating": 4.75,
-  "maxGuests": 9,
-  "type": "Entire house",
-  "beds": null,
-  "photo": "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80"
-}, {
-  "city": "Vaasa",
-  "country": "Finland",
-  "superHost": true,
-  "title": "A cosy family house",
-  "rating": 4.95,
-  "maxGuests": 6,
-  "type": "Entire house",
-  "beds": null,
-  "photo": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-}, {
-  "city": "Vaasa",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Lovely Studio near Railway Station",
-  "rating": 4.68,
-  "maxGuests": 2,
-  "type": "Private room",
-  "beds": null,
-  "photo": "https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2591&q=80"
-}, {
-  "city": "Oulu",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Peaceful little home in city center",
-  "rating": 4.12,
-  "maxGuests": 6,
-  "type": "Entire house",
-  "beds": 3,
-  "photo": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-}, {
-  "city": "Oulu",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Beautiful new studio apartment nearby the center",
-  "rating": 4.49,
-  "maxGuests": 2,
-  "type": "Entire apartment",
-  "beds": 1,
-  "photo": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80"
-}, {
-  "city": "Oulu",
-  "country": "Finland",
-  "superHost": true,
-  "title": "Cozy woodhouse flat with wooden sauna",
-  "rating": 4.38,
-  "maxGuests": 4,
-  "type": "Entire house",
-  "beds": null,
-  "photo": "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=930&q=80"
-}, {
-  "city": "Vaasa",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Brand new studio apartment near the harbour",
-  "rating": 4.89,
-  "maxGuests": 6,
-  "type": "Entire apartment",
-  "beds": 3,
-  "photo": "https://images.unsplash.com/photo-1494203484021-3c454daf695d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-}, {
-  "city": "Helsinki",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Beautiful and comfortable old wooden house",
-  "rating": 4.63,
-  "maxGuests": 10,
-  "type": "Entire house",
-  "beds": null,
-  "photo": "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-}, {
-  "city": "Turku",
-  "country": "Finland",
-  "superHost": false,
-  "title": "Turku Nordic Home near city center",
-  "rating": 4.24,
-  "maxGuests": 5,
-  "type": "Entire apartment",
-  "beds": 3,
-  "photo": "https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=2253&q=80"
-}, {
-  "city": "Turku",
-  "country": "Finland",
-  "superHost": true,
-  "title": "Nice 2 room apartment close to everything",
-  "rating": 4.34,
-  "maxGuests": 6,
-  "type": "Entire apartment",
-  "beds": 3,
-  "photo": "https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-}];
-},{}],"Components/Hotel.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Hotel;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Hotel(_ref) {
-  var photo = _ref.photo,
-      superHost = _ref.superHost,
-      type = _ref.type,
-      beds = _ref.beds,
-      rating = _ref.rating,
-      title = _ref.title;
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "card"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: photo,
-    alt: title
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: superHost ? 'full-detail-container' : 'detail-container'
-  }, superHost ? /*#__PURE__*/_react.default.createElement("p", {
-    className: "host"
-  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("p", {
-    className: superHost ? 'superhost' : 'type'
-  }, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds ? beds + " " + 'beds' : '')), /*#__PURE__*/_react.default.createElement("div", {
-    className: "rate"
-  }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    enableBackground: "new 0 0 24 24",
-    height: "16",
-    fill: "#EB5757",
-    viewBox: "0 0 24 24",
-    width: "16"
-  }, /*#__PURE__*/_react.default.createElement("g", null, /*#__PURE__*/_react.default.createElement("rect", {
-    fill: "none",
-    height: "24",
-    width: "24",
-    x: "0"
-  }), /*#__PURE__*/_react.default.createElement("polygon", {
-    points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
-  })))), /*#__PURE__*/_react.default.createElement("span", null, " ", rating))), /*#__PURE__*/_react.default.createElement("p", {
-    className: "title"
-  }, title));
-}
-},{"react":"node_modules/react/index.js"}],"img/search-icon.svg":[function(require,module,exports) {
-module.exports = "/search-icon.c37cc2d7.svg";
-},{}],"Components/Form.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _searchIcon = _interopRequireDefault(require("../img/search-icon.svg"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import Location from '../img/location.svg';
-function Form(props) {
-  var openModal = props.openModal;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
-    type: "button",
-    onClick: openModal,
-    className: "location"
-  }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("button", {
-    type: "button",
-    onClick: openModal,
-    className: "guests"
-  }, "Add guests"), /*#__PURE__*/_react.default.createElement("button", {
-    type: "button",
-    className: "endIcon",
-    onClick: openModal
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _searchIcon.default,
-    alt: "Search icon"
-  })));
-}
-
-var _default = Form;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/search-icon.svg":"img/search-icon.svg"}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -30790,7 +30559,339 @@ exports.ServerStyleSheet = Ue;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = qe;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"node_modules/process/browser.js"}],"img/white-search-icon.svg":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"node_modules/process/browser.js"}],"stays.json":[function(require,module,exports) {
+module.exports = [{
+  "city": "Helsinki",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Stylist apartment in center of the city",
+  "rating": 4.4,
+  "maxGuests": 3,
+  "type": "Entire apartment",
+  "beds": 2,
+  "photo": "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
+}, {
+  "city": "Turku",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Nice apartment in center of Helsinki",
+  "rating": 4.2,
+  "maxGuests": 5,
+  "type": "Entire apartment",
+  "beds": 3,
+  "photo": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+}, {
+  "city": "Helsinki",
+  "country": "Finland",
+  "superHost": true,
+  "title": "Arty interior in 1900 wooden house",
+  "rating": 4.5,
+  "maxGuests": 10,
+  "type": "Entire house",
+  "beds": 6,
+  "photo": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+}, {
+  "city": "Helsinki",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Apartment next to market spuare",
+  "rating": 4.48,
+  "maxGuests": 3,
+  "type": "Entire apartment",
+  "beds": null,
+  "photo": "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+}, {
+  "city": "Turku",
+  "country": "Finland",
+  "superHost": true,
+  "title": "Villa Aurora guest-house",
+  "rating": 4.75,
+  "maxGuests": 9,
+  "type": "Entire house",
+  "beds": null,
+  "photo": "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80"
+}, {
+  "city": "Vaasa",
+  "country": "Finland",
+  "superHost": true,
+  "title": "A cosy family house",
+  "rating": 4.95,
+  "maxGuests": 6,
+  "type": "Entire house",
+  "beds": null,
+  "photo": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+}, {
+  "city": "Vaasa",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Lovely Studio near Railway Station",
+  "rating": 4.68,
+  "maxGuests": 2,
+  "type": "Private room",
+  "beds": null,
+  "photo": "https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2591&q=80"
+}, {
+  "city": "Oulu",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Peaceful little home in city center",
+  "rating": 4.12,
+  "maxGuests": 6,
+  "type": "Entire house",
+  "beds": 3,
+  "photo": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+}, {
+  "city": "Oulu",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Beautiful new studio apartment nearby the center",
+  "rating": 4.49,
+  "maxGuests": 2,
+  "type": "Entire apartment",
+  "beds": 1,
+  "photo": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80"
+}, {
+  "city": "Oulu",
+  "country": "Finland",
+  "superHost": true,
+  "title": "Cozy woodhouse flat with wooden sauna",
+  "rating": 4.38,
+  "maxGuests": 4,
+  "type": "Entire house",
+  "beds": null,
+  "photo": "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=930&q=80"
+}, {
+  "city": "Vaasa",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Brand new studio apartment near the harbour",
+  "rating": 4.89,
+  "maxGuests": 6,
+  "type": "Entire apartment",
+  "beds": 3,
+  "photo": "https://images.unsplash.com/photo-1494203484021-3c454daf695d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+}, {
+  "city": "Helsinki",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Beautiful and comfortable old wooden house",
+  "rating": 4.63,
+  "maxGuests": 10,
+  "type": "Entire house",
+  "beds": null,
+  "photo": "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+}, {
+  "city": "Turku",
+  "country": "Finland",
+  "superHost": false,
+  "title": "Turku Nordic Home near city center",
+  "rating": 4.24,
+  "maxGuests": 5,
+  "type": "Entire apartment",
+  "beds": 3,
+  "photo": "https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=2253&q=80"
+}, {
+  "city": "Turku",
+  "country": "Finland",
+  "superHost": true,
+  "title": "Nice 2 room apartment close to everything",
+  "rating": 4.34,
+  "maxGuests": 6,
+  "type": "Entire apartment",
+  "beds": 3,
+  "photo": "https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
+}];
+},{}],"GlobalStyles/fonts/Montserrat-Bold.woff":[function(require,module,exports) {
+module.exports = "/Montserrat-Bold.798488e1.woff";
+},{}],"GlobalStyles/fonts/Montserrat-Bold.woff2":[function(require,module,exports) {
+module.exports = "/Montserrat-Bold.c789229f.woff2";
+},{}],"GlobalStyles/fonts/Montserrat-ExtraBold.woff":[function(require,module,exports) {
+module.exports = "/Montserrat-ExtraBold.a9f303bf.woff";
+},{}],"GlobalStyles/fonts/Montserrat-ExtraBold.woff2":[function(require,module,exports) {
+module.exports = "/Montserrat-ExtraBold.e8cd5e0a.woff2";
+},{}],"GlobalStyles/fonts/Montserrat-SemiBold.woff":[function(require,module,exports) {
+module.exports = "/Montserrat-SemiBold.ddc162c4.woff";
+},{}],"GlobalStyles/fonts/Montserrat-SemiBold.woff2":[function(require,module,exports) {
+module.exports = "/Montserrat-SemiBold.ee2bbb44.woff2";
+},{}],"GlobalStyles/fonts/Montserrat-Medium.woff":[function(require,module,exports) {
+module.exports = "/Montserrat-Medium.180da12c.woff";
+},{}],"GlobalStyles/fonts/Montserrat-Medium.woff2":[function(require,module,exports) {
+module.exports = "/Montserrat-Medium.bc2a68a8.woff2";
+},{}],"GlobalStyles/fonts/Montserrat-Regular.woff":[function(require,module,exports) {
+module.exports = "/Montserrat-Regular.75c58f57.woff";
+},{}],"GlobalStyles/fonts/Montserrat-Regular.woff2":[function(require,module,exports) {
+module.exports = "/Montserrat-Regular.ae9c5724.woff2";
+},{}],"GlobalStyles/fonts/Mulish-Regular.woff":[function(require,module,exports) {
+module.exports = "/Mulish-Regular.20cb0f18.woff";
+},{}],"GlobalStyles/fonts/Mulish-Regular.woff2":[function(require,module,exports) {
+module.exports = "/Mulish-Regular.79305ed0.woff2";
+},{}],"GlobalStyles/fonts/Mulish-Bold.woff":[function(require,module,exports) {
+module.exports = "/Mulish-Bold.147fb064.woff";
+},{}],"GlobalStyles/fonts/Mulish-Bold.woff2":[function(require,module,exports) {
+module.exports = "/Mulish-Bold.36f2c669.woff2";
+},{}],"GlobalStyles/fonts/Mulish-ExtraBold.woff":[function(require,module,exports) {
+module.exports = "/Mulish-ExtraBold.9a727668.woff";
+},{}],"GlobalStyles/fonts/Mulish-ExtraBold.woff2":[function(require,module,exports) {
+module.exports = "/Mulish-ExtraBold.741e882b.woff2";
+},{}],"GlobalStyles/fonts.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fonts = void 0;
+
+var _styledComponents = require("styled-components");
+
+var _MontserratBold = _interopRequireDefault(require("./fonts/Montserrat-Bold.woff"));
+
+var _MontserratBold2 = _interopRequireDefault(require("./fonts/Montserrat-Bold.woff2"));
+
+var _MontserratExtraBold = _interopRequireDefault(require("./fonts/Montserrat-ExtraBold.woff"));
+
+var _MontserratExtraBold2 = _interopRequireDefault(require("./fonts/Montserrat-ExtraBold.woff2"));
+
+var _MontserratSemiBold = _interopRequireDefault(require("./fonts/Montserrat-SemiBold.woff"));
+
+var _MontserratSemiBold2 = _interopRequireDefault(require("./fonts/Montserrat-SemiBold.woff2"));
+
+var _MontserratMedium = _interopRequireDefault(require("./fonts/Montserrat-Medium.woff"));
+
+var _MontserratMedium2 = _interopRequireDefault(require("./fonts/Montserrat-Medium.woff2"));
+
+var _MontserratRegular = _interopRequireDefault(require("./fonts/Montserrat-Regular.woff"));
+
+var _MontserratRegular2 = _interopRequireDefault(require("./fonts/Montserrat-Regular.woff2"));
+
+var _MulishRegular = _interopRequireDefault(require("./fonts/Mulish-Regular.woff"));
+
+var _MulishRegular2 = _interopRequireDefault(require("./fonts/Mulish-Regular.woff2"));
+
+var _MulishBold = _interopRequireDefault(require("./fonts/Mulish-Bold.woff"));
+
+var _MulishBold2 = _interopRequireDefault(require("./fonts/Mulish-Bold.woff2"));
+
+var _MulishExtraBold = _interopRequireDefault(require("./fonts/Mulish-ExtraBold.woff"));
+
+var _MulishExtraBold2 = _interopRequireDefault(require("./fonts/Mulish-ExtraBold.woff2"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var fonts = (0, _styledComponents.css)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: 'Montserrat Bold';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 700;\n        font-style: normal;\n    }\n\n    @font-face {\n        font-family: 'Montserrat Semi Bold';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 600;\n        font-style: normal;\n    }\n\n    @font-face {\n        font-family: 'Montserrat Medium';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 500;\n        font-style: normal;\n    }\n\n    @font-face {\n        font-family: 'Montserrat Regular';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 400;\n        font-style: normal;\n    }\n\n    @font-face {\n        font-family: 'Mulish Extra Bold';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 800;\n        font-style: normal;\n    }\n\n    @font-face {\n        font-family: 'Mulish Bold';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 700;\n        font-style: normal;\n    }\n\n    @font-face {\n        font-family: 'Mulish Regular';\n        src: url(", ") format('woff2'),\n            url(", ") format('woff');\n        font-weight: 400;\n        font-style: normal;\n    }\n"])), _MontserratBold2.default, _MontserratBold.default, _MontserratSemiBold2.default, _MontserratSemiBold.default, _MontserratMedium2.default, _MontserratMedium.default, _MontserratRegular2.default, _MontserratRegular.default, _MulishExtraBold2.default, _MulishExtraBold.default, _MulishBold2.default, _MulishBold.default, _MulishRegular2.default, _MulishRegular.default);
+exports.fonts = fonts;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","./fonts/Montserrat-Bold.woff":"GlobalStyles/fonts/Montserrat-Bold.woff","./fonts/Montserrat-Bold.woff2":"GlobalStyles/fonts/Montserrat-Bold.woff2","./fonts/Montserrat-ExtraBold.woff":"GlobalStyles/fonts/Montserrat-ExtraBold.woff","./fonts/Montserrat-ExtraBold.woff2":"GlobalStyles/fonts/Montserrat-ExtraBold.woff2","./fonts/Montserrat-SemiBold.woff":"GlobalStyles/fonts/Montserrat-SemiBold.woff","./fonts/Montserrat-SemiBold.woff2":"GlobalStyles/fonts/Montserrat-SemiBold.woff2","./fonts/Montserrat-Medium.woff":"GlobalStyles/fonts/Montserrat-Medium.woff","./fonts/Montserrat-Medium.woff2":"GlobalStyles/fonts/Montserrat-Medium.woff2","./fonts/Montserrat-Regular.woff":"GlobalStyles/fonts/Montserrat-Regular.woff","./fonts/Montserrat-Regular.woff2":"GlobalStyles/fonts/Montserrat-Regular.woff2","./fonts/Mulish-Regular.woff":"GlobalStyles/fonts/Mulish-Regular.woff","./fonts/Mulish-Regular.woff2":"GlobalStyles/fonts/Mulish-Regular.woff2","./fonts/Mulish-Bold.woff":"GlobalStyles/fonts/Mulish-Bold.woff","./fonts/Mulish-Bold.woff2":"GlobalStyles/fonts/Mulish-Bold.woff2","./fonts/Mulish-ExtraBold.woff":"GlobalStyles/fonts/Mulish-ExtraBold.woff","./fonts/Mulish-ExtraBold.woff2":"GlobalStyles/fonts/Mulish-ExtraBold.woff2"}],"Components/Hotel.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Hotel;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _fonts = require("../GlobalStyles/fonts");
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = (0, _styledComponents.default)('div')(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n    div {\n        p {\n            font-family: \"Montserrat Bold\"\n        }\n        div {\n            :first-child {\n                p {\n                    font-family: \"Montserrat Medium\"\n                }\n            }\n\n            :last-child {\n                span {\n                    font-family: \"Montserrat Medium\"\n                }\n            }\n        }\n    }\n\n    p {\n        font-family: \"Montserrat Semi Bold\"\n    }\n"])), _fonts.fonts);
+
+function Hotel(_ref) {
+  var photo = _ref.photo,
+      superHost = _ref.superHost,
+      type = _ref.type,
+      beds = _ref.beds,
+      rating = _ref.rating,
+      title = _ref.title;
+  return /*#__PURE__*/_react.default.createElement(Container, {
+    className: "card"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: photo,
+    alt: title
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: superHost ? 'full-detail-container' : 'detail-container'
+  }, superHost ? /*#__PURE__*/_react.default.createElement("p", {
+    className: "host"
+  }, "Super Host") : '', /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: superHost ? 'superhost' : 'type'
+  }, type, " ", /*#__PURE__*/_react.default.createElement("span", null, beds ? beds + " " + 'beds' : ''))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "rate"
+  }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    enableBackground: "new 0 0 24 24",
+    height: "16",
+    fill: "#EB5757",
+    viewBox: "0 0 24 24",
+    width: "16"
+  }, /*#__PURE__*/_react.default.createElement("g", null, /*#__PURE__*/_react.default.createElement("rect", {
+    fill: "none",
+    height: "24",
+    width: "24",
+    x: "0"
+  }), /*#__PURE__*/_react.default.createElement("polygon", {
+    points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+  })))), /*#__PURE__*/_react.default.createElement("span", null, " ", rating))), /*#__PURE__*/_react.default.createElement("p", {
+    className: "title"
+  }, title));
+}
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../GlobalStyles/fonts":"GlobalStyles/fonts.js"}],"img/search-icon.svg":[function(require,module,exports) {
+module.exports = "/search-icon.c37cc2d7.svg";
+},{}],"Components/Form.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _fonts = require("../GlobalStyles/fonts");
+
+var _searchIcon = _interopRequireDefault(require("../img/search-icon.svg"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ButtonContainer = (0, _styledComponents.default)('div')(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n     button {\n         font-family: \"Mulish Regular\";\n\n         :last-child {\n            transform: translateY(3px);\n         }\n     }\n"])));
+
+function Form(props) {
+  var openModal = props.openModal;
+  return /*#__PURE__*/_react.default.createElement(ButtonContainer, null, /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: openModal,
+    className: "location"
+  }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: openModal,
+    className: "guests"
+  }, "Add guests"), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    className: "endIcon",
+    onClick: openModal
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _searchIcon.default,
+    alt: "Search icon"
+  })));
+}
+
+var _default = Form;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../GlobalStyles/fonts":"GlobalStyles/fonts.js","../img/search-icon.svg":"img/search-icon.svg"}],"img/white-search-icon.svg":[function(require,module,exports) {
 module.exports = "/white-search-icon.d2966801.svg";
 },{}],"img/location.svg":[function(require,module,exports) {
 module.exports = "/location.1fd9a54b.svg";
@@ -30820,7 +30921,9 @@ var _plus = _interopRequireDefault(require("../img/plus.svg"));
 
 var _minus = _interopRequireDefault(require("../img/minus.svg"));
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
+var _fonts = require("../GlobalStyles/fonts");
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30842,18 +30945,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Form = (0, _styledComponents.default)("form")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n"])));
-var DropDownContainer = (0, _styledComponents.default)("div")(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n"])));
-var DropDownHeader = (0, _styledComponents.default)("div")(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  color: #333333;\n  border-top-left-radius: 16px;\n  border-bottom-left-radius: 16px;\n  padding-block-start: 12px;\n  padding-block-end: 10px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n\n  span {\n    font-size: 9px;\n    line-height: 11px;\n    font-weight: 800;\n    text-transform: uppercase;\n  }\n\n  p {\n    font-size: 14px;\n    line-height: 18px;\n    cursor: pointer;\n    margin: 0;\n  }\n"])));
-var DropDownListContainer = (0, _styledComponents.default)("nav")(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([""])));
-var DropDownList = (0, _styledComponents.default)("ul")(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  padding: 0;\n"])));
-var ListContainer = (0, _styledComponents.default)("div")(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  :first-child {\n    margin-block-start: 41px;\n  }\n\n  :not(:first-child) {\n    margin-block-start: 36px;\n  }\n"])));
-var ListItem = (0, _styledComponents.default)("li")(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  list-style: none;\n  text-align: center;\n  vertical-align: center;\n  margin-inline-start: 10px;\n  color: #4F4F4F;\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n"])));
-var Label = (0, _styledComponents.default)("label")(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  width: auto;\n  padding-block-start: 12px;\n  padding-block-end: 11px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: fit-content;\n\n  span {\n    font-weight: 800;\n    font-size: 9px;\n    line-height: 11px;\n    text-transform: uppercase;\n    color: #333333;\n    margin-block-start: 4px;\n  }\n\n  input {\n    border: none;\n    font-size: 14px;\n    line-height: 18px;\n    color: #BDBDBD;\n    outline: none;\n  }\n"])));
-var ButtonContainer = (0, _styledComponents.default)("div")(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  padding-block-start: 4px;\n  padding-block-end: 6px;\n  border-top-right-radius: 16px;\n  border-bottom-right-radius: 16px;\n  border: none;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  color: black;\n  cursor: pointer;\n  background-color: white;\n  height: fit-content;\n"])));
-var Button = (0, _styledComponents.default)("button")(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  background-color: #EB5757;\n  color: #ffffff;\n  border: none;\n  border-radius: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  padding-block-start: 15px;\n  padding-block-end: 16px;\n  padding-inline-start: 27px;\n  padding-inline-end: 25px;\n  margin-inline-start: auto;\n  margin-inline-end: auto;\n\n  span {\n    margin-inline-start: 11px;\n    vertical-align: center;\n    text-align: center;\n  }\n"])));
-var CounterContainer = (0, _styledComponents.default)("div")(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  margin-inline-start: 16px;\n\n  p {\n    color: #333333;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n\n    :first-child {\n      margin-block-start: 48px;\n    }\n\n    :last-child {\n      margin-block-start: 52px;\n    }\n    \n  }\n\n  small {\n    color: #BDBDBD;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n  }\n"])));
-var CounterButtonContainer = (0, _styledComponents.default)("div")(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  margin-block-start: 12px;\n\n  button {\n    background-color: #ffffff;\n    border: 1px solid #828282;\n    border-radius: 4px;\n  }\n\n  span {\n    margin-inline-start: 15px;\n    margin-inline-end: 16px;\n  }\n"])));
+var ModalContainer = (0, _styledComponents.default)("div")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  @media (max-width: 900px) {\n    form {\n      display: flex;\n      flex-direction: column;\n    }\n  }\n"])));
+var Form = (0, _styledComponents.default)("form")(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n"])));
+var DropDownContainer = (0, _styledComponents.default)("div")(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n"])));
+var DropDownHeader = (0, _styledComponents.default)("div")(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  ", "\n  color: #333333;\n  border-top-left-radius: 16px;\n  border-bottom-left-radius: 16px;\n  padding-block-start: 12px;\n  padding-block-end: 10px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n\n  span {\n    font-family: \"Mulish Extra Bold\";\n    font-size: 9px;\n    line-height: 11px;\n    font-weight: 800;\n    text-transform: uppercase;\n  }\n\n  p {\n    font-family: \"Mulish Regular\";\n    font-size: 14px;\n    line-height: 18px;\n    cursor: pointer;\n    margin: 0;\n  }\n"])), _fonts.fonts);
+var DropDownListContainer = (0, _styledComponents.default)("nav")(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([""])));
+var DropDownList = (0, _styledComponents.default)("ul")(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  padding: 0;\n"])));
+var ListContainer = (0, _styledComponents.default)("div")(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  :first-child {\n    margin-block-start: 41px;\n  }\n\n  :not(:first-child) {\n    margin-block-start: 36px;\n  }\n"])));
+var ListItem = (0, _styledComponents.default)("li")(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  ", "\n  font-family: \"Mulish Regular\";\n  list-style: none;\n  text-align: center;\n  vertical-align: center;\n  margin-inline-start: 10px;\n  color: #4F4F4F;\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n"])), _fonts.fonts);
+var Label = (0, _styledComponents.default)("label")(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  ", "\n  width: auto;\n  padding-block-start: 12px;\n  padding-block-end: 11px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: fit-content;\n\n  span {\n    font-family: \"Mulish Extra Bold\";\n    font-weight: 800;\n    font-size: 9px;\n    line-height: 11px;\n    text-transform: uppercase;\n    color: #333333;\n    margin-block-start: 4px;\n  }\n\n  input {\n    font-family: \"Mulish Regular\";\n    border: none;\n    font-size: 14px;\n    line-height: 18px;\n    color: #BDBDBD;\n    outline: none;\n  }\n"])), _fonts.fonts);
+var ButtonContainer = (0, _styledComponents.default)("div")(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  padding-block-start: 4px;\n  padding-block-end: 6px;\n  border-top-right-radius: 16px;\n  border-bottom-right-radius: 16px;\n  border: none;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  color: black;\n  cursor: pointer;\n  background-color: white;\n  height: fit-content;\n"])));
+var Button = (0, _styledComponents.default)("button")(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  background-color: #EB5757;\n  color: #ffffff;\n  border: none;\n  border-radius: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  padding-block-start: 15px;\n  padding-block-end: 16px;\n  padding-inline-start: 27px;\n  padding-inline-end: 25px;\n  margin-inline-start: auto;\n  margin-inline-end: auto;\n\n  span {\n    font-family: \"Mulish Bold\";\n    margin-inline-start: 11px;\n    vertical-align: center;\n    text-align: center;\n  }\n"])));
+var CounterContainer = (0, _styledComponents.default)("div")(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  margin-inline-start: 16px;\n\n  p {\n    font-family: \"Mulish Regular\";\n    color: #333333;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n\n    :first-child {\n      margin-block-start: 48px;\n    }\n\n    :last-child {\n      margin-block-start: 52px;\n    }\n    \n  }\n\n  small {\n    font-family: \"Mulish Regular\";\n    color: #BDBDBD;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n  }\n"])));
+var CounterButtonContainer = (0, _styledComponents.default)("div")(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  margin-block-start: 12px;\n\n  button {\n    background-color: #ffffff;\n    border: 1px solid #828282;\n    border-radius: 4px;\n  }\n\n  span {\n    margin-inline-start: 15px;\n    margin-inline-end: 16px;\n  }\n"])));
 
 function Modal(props) {
   var show = props.show,
@@ -30944,7 +31048,7 @@ function Modal(props) {
     }
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(ModalContainer, {
     className: showHideClassName
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-main"
@@ -31009,7 +31113,7 @@ function Modal(props) {
 ;
 var _default = Modal;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../stays.json":"stays.json","../img/white-search-icon.svg":"img/white-search-icon.svg","../img/location.svg":"img/location.svg","../img/plus.svg":"img/plus.svg","../img/minus.svg":"img/minus.svg"}],"Components/HotelComponents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../stays.json":"stays.json","../img/white-search-icon.svg":"img/white-search-icon.svg","../img/location.svg":"img/location.svg","../img/plus.svg":"img/plus.svg","../img/minus.svg":"img/minus.svg","../GlobalStyles/fonts":"GlobalStyles/fonts.js"}],"Components/HotelComponents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31018,6 +31122,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.HotelComponents = HotelComponents;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _stays = _interopRequireDefault(require("../stays.json"));
 
@@ -31081,23 +31187,6 @@ function HotelComponents() {
     setData(_stays.default);
   }
 
-  function filterNumberOfGuest(e) {
-    setGuest(e.target.value);
-
-    var filteredGuest = _stays.default.filter(function (guest) {
-      return guest.maxGuests.toString() === e.target.value;
-    });
-
-    setData(filteredGuest);
-  } // const filterPlaces = (e) => {
-  //     const placeFilter = e.target.value.toLowerCase();
-  //     const numberFilter = e.target.value;
-  //     const filteredPlaces = stays.filter(place => placeFilter ? place.city.toLowerCase() === e.target.value : true && (numberFilter ? place.maxGuests.toString() === e.target.value : true));
-  //     console.log(filteredPlaces);
-  //     setData(filteredPlaces);
-  // }
-
-
   var mapData = _stays.default.map(function (stay) {
     return /*#__PURE__*/_react.default.createElement(_Hotel.default, _extends({
       key: stay.title
@@ -31109,7 +31198,7 @@ function HotelComponents() {
       key: stay.title
     }, stay));
   });
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("form", {
     className: "form",
     onSubmit: searchData
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
@@ -31117,7 +31206,6 @@ function HotelComponents() {
   })), show ? /*#__PURE__*/_react.default.createElement(_Modal.default, {
     show: show,
     closeModal: closeModal,
-    inputChange: filterNumberOfGuest,
     value: location,
     guests: guest,
     openModal: openModal,
@@ -31129,7 +31217,7 @@ function HotelComponents() {
     className: "card-list"
   }, location || guest ? filteredStays : mapData));
 }
-},{"react":"node_modules/react/index.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js","../Components/Modal":"Components/Modal.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../stays.json":"stays.json","../Components/Hotel":"Components/Hotel.js","../Components/Form":"Components/Form.js","../Components/Modal":"Components/Modal.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31191,7 +31279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35729" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35991" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
