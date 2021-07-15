@@ -31077,7 +31077,7 @@ function Modal(props) {
     name: name,
     onChange: inputChange,
     value: guests,
-    placeholder: placeholder
+    placeholder: count === 0 && countForAdults === 0 ? placeholder : count + countForAdults
   })), isInputFieldClicked && /*#__PURE__*/_react.default.createElement(CounterContainer, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Adults"), /*#__PURE__*/_react.default.createElement("small", null, "Ages 13 or above"), /*#__PURE__*/_react.default.createElement(CounterButtonContainer, null, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     onClick: decrementAdultNumber
@@ -31279,7 +31279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35991" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35923" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

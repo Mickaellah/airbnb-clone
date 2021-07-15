@@ -202,6 +202,7 @@ p > span > svg {
 
 .modal {
     position: absolute;
+    width: 100vw;
     top: 0;
     left: 0;
     background-color: white;

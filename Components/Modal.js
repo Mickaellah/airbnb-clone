@@ -294,7 +294,7 @@ function Modal(props) {
               <span>
                   Guests
               </span>
-              <input type={type} name={name} onChange={inputChange} value={guests} placeholder={placeholder}/>
+              <input type={type} name={name} onChange={inputChange} value={guests} placeholder={count === 0 && countForAdults === 0 ? placeholder : (count + countForAdults)}/>
             </Label>
 
             {isInputFieldClicked && (
