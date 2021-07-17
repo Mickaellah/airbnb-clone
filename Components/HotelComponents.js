@@ -6,9 +6,38 @@ import Hotel from "../Components/Hotel";
 import Form from "../Components/Form";
 import Modal from "../Components/Modal";
 
-const Container = styled("div")`
+const FormStyled = styled("form")`
+    position: absolute;
+    top: 32px;
+    left: 75%;
+    display: flex;
+    margin-block-start: 16px;
+
     @media (max-width: 900px) {
-        margin-block-start: -114px;
+        left: 0;
+        top: -173px;
+        position: relative;
+        margin-bottom: 32px;
+        margin-inline: auto;
+        max-width: 298px;
+    }
+`;
+
+const CardList = styled("div")`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 34px;
+    column-gap: 34px;
+
+    @media (max-width: 900px) {
+        margin-block-start: -110px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+        display: grid;
+        grid-template-columns: auto;
     }
 `;
 
@@ -40,12 +69,12 @@ export function HotelComponents() {
     })
 
     return (
-        <Container>
-            <form className="form" onSubmit={searchData}>
+        <div>
+            <FormStyled onSubmit={searchData}>
                 <Form 
                     openModal={openModal}   
                 />
-            </form>
+            </FormStyled>
             {show ? <Modal 
                         show={show}
                         closeModal={closeModal}
@@ -57,9 +86,9 @@ export function HotelComponents() {
                         setLocation={setLocation}
                         setGuest={setGuest}
                      /> : ""}
-            <div className="card-list">
+            <CardList>
                 {(location || guest) ? filteredStays : mapData}
-            </div>
-        </Container>
+            </CardList>
+        </div>
     )
 }

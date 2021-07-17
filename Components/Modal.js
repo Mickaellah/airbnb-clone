@@ -10,8 +10,17 @@ import Minus from '../img/minus.svg';
 import { fonts } from "../GlobalStyles/fonts";
 
 const ModalContainer = styled("div")`
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: black;
+    padding-block-start: 93px;
+    padding-block-end: 70px;
   @media (max-width: 900px) {
     padding: 13px;
+
     form {
       display: flex;
       flex-direction: column;
@@ -19,11 +28,15 @@ const ModalContainer = styled("div")`
   }
 `;
 
+const ModalMain = styled("div")`
+  max-width: 1248px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+`;
 const Form = styled("form")`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 `;
-
 const DropDownContainer = styled("div")`
 `;
 const DropDownHeader = styled("div")`
@@ -227,6 +240,11 @@ const ClosedButtonContainer = styled("div")`
   }
 `;
 
+const Icon = styled('img')`
+    width: 14px;
+    height: 19px;
+`;
+
 function Modal(props) {
   const { 
     show, 
@@ -297,7 +315,7 @@ function Modal(props) {
 
   return (
     <ModalContainer className={showHideClassName}>
-      <div className="modal-main">
+      <ModalMain className="modal-main">
         <ClosedButtonContainer>
           <p>Edit your search</p>
           <button onClick={closeModal}>X</button>
@@ -314,7 +332,7 @@ function Modal(props) {
                   <DropDownList>
                     {options.map((option, index) => (
                       <ListContainer key={index}>
-                        <img className="location-icon" src={Location} alt="Location icon" />
+                        <Icon src={Location} alt="Location icon" />
                         <ListItem data-value={option} onClick={optionSelected}>
                             {option}, Finland
                         </ListItem>
@@ -370,7 +388,7 @@ function Modal(props) {
             </Button>
           </ButtonContainer>
         </Form>
-      </div>
+      </ModalMain>
     </ModalContainer>
   );
 };
