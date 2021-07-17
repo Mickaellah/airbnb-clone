@@ -6,6 +6,12 @@ import Hotel from "../Components/Hotel";
 import Form from "../Components/Form";
 import Modal from "../Components/Modal";
 
+const Container = styled("div")`
+    @media (max-width: 900px) {
+        margin-block-start: -114px;
+    }
+`;
+
 export function HotelComponents() {
     const [ location, setLocation ] = useState('');
     const [ guest, setGuest ] = useState('');
@@ -34,7 +40,7 @@ export function HotelComponents() {
     })
 
     return (
-        <div>
+        <Container>
             <form className="form" onSubmit={searchData}>
                 <Form 
                     openModal={openModal}   
@@ -54,6 +60,6 @@ export function HotelComponents() {
             <div className="card-list">
                 {(location || guest) ? filteredStays : mapData}
             </div>
-        </div>
+        </Container>
     )
 }

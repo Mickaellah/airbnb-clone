@@ -30923,7 +30923,7 @@ var _minus = _interopRequireDefault(require("../img/minus.svg"));
 
 var _fonts = require("../GlobalStyles/fonts");
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30945,19 +30945,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ModalContainer = (0, _styledComponents.default)("div")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  @media (max-width: 900px) {\n    form {\n      display: flex;\n      flex-direction: column;\n    }\n  }\n"])));
+var ModalContainer = (0, _styledComponents.default)("div")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  @media (max-width: 900px) {\n    padding: 13px;\n    form {\n      display: flex;\n      flex-direction: column;\n    }\n  }\n"])));
 var Form = (0, _styledComponents.default)("form")(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n"])));
 var DropDownContainer = (0, _styledComponents.default)("div")(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n"])));
-var DropDownHeader = (0, _styledComponents.default)("div")(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  ", "\n  color: #333333;\n  border-top-left-radius: 16px;\n  border-bottom-left-radius: 16px;\n  padding-block-start: 12px;\n  padding-block-end: 10px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n\n  span {\n    font-family: \"Mulish Extra Bold\";\n    font-size: 9px;\n    line-height: 11px;\n    font-weight: 800;\n    text-transform: uppercase;\n  }\n\n  p {\n    font-family: \"Mulish Regular\";\n    font-size: 14px;\n    line-height: 18px;\n    cursor: pointer;\n    margin: 0;\n  }\n"])), _fonts.fonts);
+var DropDownHeader = (0, _styledComponents.default)("div")(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  ", "\n  color: #333333;\n  border-top-left-radius: 16px;\n  border-bottom-left-radius: 16px;\n  padding-block-start: 12px;\n  padding-block-end: 10px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n\n  span {\n    font-family: \"Mulish Extra Bold\";\n    font-size: 9px;\n    line-height: 11px;\n    font-weight: 800;\n    text-transform: uppercase;\n  }\n\n  p {\n    font-family: \"Mulish Regular\";\n    font-size: 14px;\n    line-height: 18px;\n    cursor: pointer;\n    margin: 0;\n  }\n\n  @media (max-width: 900px) {\n    border-bottom-left-radius: 0px;\n    border-top-right-radius: 16px;\n  }\n"])), _fonts.fonts);
 var DropDownListContainer = (0, _styledComponents.default)("nav")(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([""])));
 var DropDownList = (0, _styledComponents.default)("ul")(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  padding: 0;\n"])));
 var ListContainer = (0, _styledComponents.default)("div")(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  :first-child {\n    margin-block-start: 41px;\n  }\n\n  :not(:first-child) {\n    margin-block-start: 36px;\n  }\n"])));
 var ListItem = (0, _styledComponents.default)("li")(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  ", "\n  font-family: \"Mulish Regular\";\n  list-style: none;\n  text-align: center;\n  vertical-align: center;\n  margin-inline-start: 10px;\n  color: #4F4F4F;\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n"])), _fonts.fonts);
-var Label = (0, _styledComponents.default)("label")(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  ", "\n  width: auto;\n  padding-block-start: 12px;\n  padding-block-end: 11px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: fit-content;\n\n  span {\n    font-family: \"Mulish Extra Bold\";\n    font-weight: 800;\n    font-size: 9px;\n    line-height: 11px;\n    text-transform: uppercase;\n    color: #333333;\n    margin-block-start: 4px;\n  }\n\n  input {\n    font-family: \"Mulish Regular\";\n    border: none;\n    font-size: 14px;\n    line-height: 18px;\n    color: #BDBDBD;\n    outline: none;\n  }\n"])), _fonts.fonts);
-var ButtonContainer = (0, _styledComponents.default)("div")(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  padding-block-start: 4px;\n  padding-block-end: 6px;\n  border-top-right-radius: 16px;\n  border-bottom-right-radius: 16px;\n  border: none;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  color: black;\n  cursor: pointer;\n  background-color: white;\n  height: fit-content;\n"])));
+var Label = (0, _styledComponents.default)("label")(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  ", "\n  width: auto;\n  padding-block-start: 12px;\n  padding-block-end: 11px;\n  padding-inline: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  height: fit-content;\n\n  span {\n    font-family: \"Mulish Extra Bold\";\n    font-weight: 800;\n    font-size: 9px;\n    line-height: 11px;\n    text-transform: uppercase;\n    color: #333333;\n    margin-block-start: 4px;\n  }\n\n  input {\n    font-family: \"Mulish Regular\";\n    border: none;\n    font-size: 14px;\n    line-height: 18px;\n    color: #BDBDBD;\n    outline: none;\n  }\n\n  @media (max-width: 900px) {\n    border-bottom-left-radius: 16px;\n    border-bottom-right-radius: 16px;\n    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n"])), _fonts.fonts);
+var ButtonContainer = (0, _styledComponents.default)("div")(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  padding-block-start: 4px;\n  padding-block-end: 6px;\n  border-top-right-radius: 16px;\n  border-bottom-right-radius: 16px;\n  border: none;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  color: black;\n  cursor: pointer;\n  background-color: white;\n  height: fit-content;\n\n  @media (max-width: 900px) {\n    margin-block-start: 180px;\n    box-shadow: none;\n  }\n"])));
 var Button = (0, _styledComponents.default)("button")(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  background-color: #EB5757;\n  color: #ffffff;\n  border: none;\n  border-radius: 16px;\n  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);\n  padding-block-start: 15px;\n  padding-block-end: 16px;\n  padding-inline-start: 27px;\n  padding-inline-end: 25px;\n  margin-inline-start: auto;\n  margin-inline-end: auto;\n\n  span {\n    font-family: \"Mulish Bold\";\n    margin-inline-start: 11px;\n    vertical-align: center;\n    text-align: center;\n  }\n"])));
 var CounterContainer = (0, _styledComponents.default)("div")(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  margin-inline-start: 16px;\n\n  p {\n    font-family: \"Mulish Regular\";\n    color: #333333;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n\n    :first-child {\n      margin-block-start: 48px;\n    }\n\n    :last-child {\n      margin-block-start: 52px;\n    }\n    \n  }\n\n  small {\n    font-family: \"Mulish Regular\";\n    color: #BDBDBD;\n    font-size: 14px;\n    line-height: 18px;\n    margin: 0;\n  }\n"])));
 var CounterButtonContainer = (0, _styledComponents.default)("div")(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  margin-block-start: 12px;\n\n  button {\n    background-color: #ffffff;\n    border: 1px solid #828282;\n    border-radius: 4px;\n  }\n\n  span {\n    margin-inline-start: 15px;\n    margin-inline-end: 16px;\n  }\n"])));
+var ClosedButtonContainer = (0, _styledComponents.default)("div")(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n  ", "\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n\n  p {\n    font-family: \"Mulish Bold\";\n    font-size: 12px;\n    line-height: 15.06px;\n  }\n\n  button {\n    border: none;\n    background-color: #ffffff;\n  }\n"])), _fonts.fonts);
 
 function Modal(props) {
   var show = props.show,
@@ -31052,8 +31053,7 @@ function Modal(props) {
     className: showHideClassName
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-main"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "close_button",
+  }, /*#__PURE__*/_react.default.createElement(ClosedButtonContainer, null, /*#__PURE__*/_react.default.createElement("p", null, "Edit your search"), /*#__PURE__*/_react.default.createElement("button", {
     onClick: closeModal
   }, "X")), /*#__PURE__*/_react.default.createElement(Form, {
     onClick: filteredPlace
@@ -31133,6 +31133,8 @@ var _Form = _interopRequireDefault(require("../Components/Form"));
 
 var _Modal = _interopRequireDefault(require("../Components/Modal"));
 
+var _templateObject;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -31152,6 +31154,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = (0, _styledComponents.default)("div")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    @media (max-width: 900px) {\n        margin-block-start: -114px;\n    }\n"])));
 
 function HotelComponents() {
   var _useState = (0, _react.useState)(''),
@@ -31198,7 +31204,7 @@ function HotelComponents() {
       key: stay.title
     }, stay));
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement(Container, null, /*#__PURE__*/_react.default.createElement("form", {
     className: "form",
     onSubmit: searchData
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
@@ -31279,7 +31285,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35923" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44917" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

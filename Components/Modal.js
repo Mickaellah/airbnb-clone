@@ -11,6 +11,7 @@ import { fonts } from "../GlobalStyles/fonts";
 
 const ModalContainer = styled("div")`
   @media (max-width: 900px) {
+    padding: 13px;
     form {
       display: flex;
       flex-direction: column;
@@ -49,6 +50,11 @@ const DropDownHeader = styled("div")`
     line-height: 18px;
     cursor: pointer;
     margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 16px;
   }
 `;
 const DropDownListContainer = styled("nav")``;
@@ -109,6 +115,11 @@ const Label = styled("label")`
     color: #BDBDBD;
     outline: none;
   }
+
+  @media (max-width: 900px) {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const ButtonContainer = styled("div")`
@@ -122,6 +133,11 @@ const ButtonContainer = styled("div")`
   cursor: pointer;
   background-color: white;
   height: fit-content;
+
+  @media (max-width: 900px) {
+    margin-block-start: 180px;
+    box-shadow: none;
+  }
 `;
 
 const Button = styled("button")`
@@ -190,6 +206,24 @@ const CounterButtonContainer = styled("div")`
   span {
     margin-inline-start: 15px;
     margin-inline-end: 16px;
+  }
+`;
+
+const ClosedButtonContainer = styled("div")`
+  ${fonts}
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  p {
+    font-family: "Mulish Bold";
+    font-size: 12px;
+    line-height: 15.06px;
+  }
+
+  button {
+    border: none;
+    background-color: #ffffff;
   }
 `;
 
@@ -264,9 +298,10 @@ function Modal(props) {
   return (
     <ModalContainer className={showHideClassName}>
       <div className="modal-main">
-        <div>
-          <button className="close_button" onClick={closeModal}>X</button>
-        </div>
+        <ClosedButtonContainer>
+          <p>Edit your search</p>
+          <button onClick={closeModal}>X</button>
+        </ClosedButtonContainer>
         <Form  onClick={filteredPlace}>
           <DropDownContainer>
             <DropDownHeader onClick={toggling}>
