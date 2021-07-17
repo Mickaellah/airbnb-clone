@@ -31156,8 +31156,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var FormStyled = (0, _styledComponents.default)("form")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 32px;\n    left: 75%;\n    display: flex;\n    margin-block-start: 16px;\n\n    @media (max-width: 900px) {\n        left: 0;\n        top: -173px;\n        position: relative;\n        margin-bottom: 32px;\n        margin-inline: auto;\n        max-width: 298px;\n    }\n"])));
-var CardList = (0, _styledComponents.default)("div")(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-column-gap: 34px;\n    column-gap: 34px;\n\n    @media (max-width: 900px) {\n        margin-block-start: -110px;\n        display: grid;\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    @media (max-width: 600px) {\n        display: grid;\n        grid-template-columns: auto;\n    }\n"])));
+var FormStyled = (0, _styledComponents.default)("form")(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: flex-end;\n    transform: translateY(-350%);\n\n    @media (max-width: 900px) {\n        display: flex;\n        justify-content: center;\n        transform: translateY(-276%);\n    }\n"])));
+var CardList = (0, _styledComponents.default)("div")(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-column-gap: 34px;\n    column-gap: 34px;\n    margin-block-start: -66px;\n\n    @media (max-width: 900px) {\n        display: grid;\n        grid-template-columns: repeat(2, 1fr);\n        margin-block-start: -64px;\n    }\n\n    @media (max-width: 600px) {\n        display: grid;\n        grid-template-columns: auto;\n    }\n"])));
 
 function HotelComponents() {
   var _useState = (0, _react.useState)(''),

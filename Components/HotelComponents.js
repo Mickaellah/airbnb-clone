@@ -7,19 +7,14 @@ import Form from "../Components/Form";
 import Modal from "../Components/Modal";
 
 const FormStyled = styled("form")`
-    position: absolute;
-    top: 32px;
-    left: 75%;
     display: flex;
-    margin-block-start: 16px;
+    justify-content: flex-end;
+    transform: translateY(-350%);
 
     @media (max-width: 900px) {
-        left: 0;
-        top: -173px;
-        position: relative;
-        margin-bottom: 32px;
-        margin-inline: auto;
-        max-width: 298px;
+        display: flex;
+        justify-content: center;
+        transform: translateY(-276%);
     }
 `;
 
@@ -28,11 +23,12 @@ const CardList = styled("div")`
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 34px;
     column-gap: 34px;
+    margin-block-start: -66px;
 
     @media (max-width: 900px) {
-        margin-block-start: -110px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin-block-start: -64px;
     }
 
     @media (max-width: 600px) {
